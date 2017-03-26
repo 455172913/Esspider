@@ -18,12 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * ClassName:Crawler4all Description:
- * 
- * @author sunshinan
- * @Date 2012 2012-6-26 上午11:00:33
- */
+
 public class CrawlerUtils {
 
 

@@ -6,9 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by zhaojunjun on 15/12/19.
- */
+
 public class ResponseUtils {
     private final static Logger logger = LoggerFactory.getLogger(ResponseUtils.class);
 

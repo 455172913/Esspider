@@ -2,12 +2,7 @@ package com.common.util;
 
 import java.text.SimpleDateFormat;
 
-/**
- * 
- * @Description 公共类
- * @time 下午2:53:03
- * @author Sun shinan
- */
+
 public class Constant {
 
 	/**

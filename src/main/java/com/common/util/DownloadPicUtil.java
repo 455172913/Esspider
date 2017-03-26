@@ -6,11 +6,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-/**
- * @Description  
- * @time 2015年7月29日
- * @author Sun shinan
- */
 public class DownloadPicUtil {
 
 	public static void download(String ul, String path) throws Exception {

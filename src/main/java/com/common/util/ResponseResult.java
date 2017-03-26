@@ -1,8 +1,5 @@
 package com.common.util;
 
-/**
- * Created by zhaojunjun on 15/12/19.
- */
 public class ResponseResult {
 
     public static final int STATUS_OK = 200;
