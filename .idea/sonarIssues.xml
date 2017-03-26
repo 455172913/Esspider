@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="$PROJECT_DIR$/mianBao.iml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/common/util/CrawlerUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/config/HikariCPConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/config/JMonitorConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/config/PersistenceJPAConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/controller/AdminController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/controller/TestController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/service/ISearchService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/service/impl/SearchHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/service/impl/SearchServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/applicationContext-mybatis.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/database.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/IqiyiSearch.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/SouhuSearch.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/TengxunSearch.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/Test.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/YoukuSearch.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/demo.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

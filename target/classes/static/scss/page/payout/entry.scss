@@ -1,0 +1,78 @@
+.wrap{
+	input[readonly] {
+    	background: #eee;
+	}
+	.content{
+		.submit-btn{
+			margin: 20px 0 0 0px;
+			display: inline-block;
+			text-align: center;
+			height: 40px;
+			line-height: 40px;
+			width: 80px;
+			color: #fff;
+		    background-color: #23bfb1;
+		    border-radius: 4px;
+		}
+		.search-order{  
+			.form-horizontal{ 
+				margin-top: 20px;
+				.radio{
+					line-height: 24px;
+				}
+				span{
+					display: inline-block;
+					width: 66px;
+				}
+				#sign-shop{
+					margin-left: 5px;
+				}
+				input[type=text]{
+					width: 188px;
+    				border-radius: inherit;
+				}
+				.choose-shop{
+					float: left;
+				}
+				.bill-select{
+					height: 30px;
+					width: 150px;
+					font-size: 14px;
+					border-radius: 0px;
+				}
+				.ac-wrapper{
+					.ac-outer{
+						margin-left: 60px;
+					}
+				} 
+				.payout-reason{
+					color: #faaa3a;
+				}
+				.error{
+					margin: 5px 0 0 70px;
+					color: red;
+    				font-style: inherit;
+				}
+			}
+			.search-btn{
+				margin: 20px 0 0 69px;
+				display: inline-block;
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+				width: 80px;
+				color: #fff;
+			    background-color: #fd9c47;
+			    border-radius: 4px;
+			}
+		}
+		.check-box{
+			margin-top: 20px;
+		}
+		.alert{
+			margin-top: 20px;
+			font-style: inherit
+		}
+	}
+}
+

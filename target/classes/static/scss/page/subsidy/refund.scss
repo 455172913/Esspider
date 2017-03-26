@@ -1,0 +1,52 @@
+.wrap{
+	.to-detail{
+		color: #2bb8aa;
+		cursor: pointer;
+	}
+	.search-order{  
+		.form-horizontal{
+			margin-top: 20px;  
+			.form_datetime{
+				margin: 0 8px;
+			}
+			.font-width{
+				margin-left: 28px;
+			}
+			.choose-shop{
+				float: left;
+			}
+			.ac-wrapper{
+				float: left;
+			}
+			.bill-select{
+				height: 30px;
+				width: 150px;
+				font-size: 14px;
+				margin-left: 8px;
+				border-radius: 0px;
+			}
+			.file-name{
+				margin-left: 10px;
+			}
+			#needNotify{
+				margin: -2px 5px 0 0;
+			}
+		}
+		.search-btn{
+			margin: 20px 0 0 69px;
+			display: inline-block;
+			text-align: center;
+			height: 40px;
+			line-height: 40px;
+			width: 80px;
+			color: #fff;
+		    background-color: #fd9c47;
+		    border-radius: 4px;
+		}
+		.search-btn:hover{
+			color: #fff;
+		}
+	}
+
+}
+

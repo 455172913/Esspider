@@ -1,0 +1,59 @@
+.wrap input[readonly] {
+  background: #eee; }
+
+.wrap .content .submit-btn {
+  margin: 20px 0 0 0px;
+  display: inline-block;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  width: 80px;
+  color: #fff;
+  background-color: #23bfb1;
+  border-radius: 4px; }
+
+.wrap .content .search-order .form-horizontal {
+  margin-top: 20px; }
+  .wrap .content .search-order .form-horizontal .radio {
+    line-height: 24px; }
+  .wrap .content .search-order .form-horizontal span {
+    display: inline-block;
+    width: 66px; }
+  .wrap .content .search-order .form-horizontal #sign-shop {
+    margin-left: 5px; }
+  .wrap .content .search-order .form-horizontal input[type=text] {
+    width: 188px;
+    border-radius: inherit; }
+  .wrap .content .search-order .form-horizontal .choose-shop {
+    float: left; }
+  .wrap .content .search-order .form-horizontal .bill-select {
+    height: 30px;
+    width: 150px;
+    font-size: 14px;
+    border-radius: 0px; }
+  .wrap .content .search-order .form-horizontal .ac-wrapper .ac-outer {
+    margin-left: 60px; }
+  .wrap .content .search-order .form-horizontal .payout-reason {
+    color: #faaa3a; }
+  .wrap .content .search-order .form-horizontal .error {
+    margin: 5px 0 0 70px;
+    color: red;
+    font-style: inherit; }
+
+.wrap .content .search-order .search-btn {
+  margin: 20px 0 0 69px;
+  display: inline-block;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  width: 80px;
+  color: #fff;
+  background-color: #fd9c47;
+  border-radius: 4px; }
+
+.wrap .content .check-box {
+  margin-top: 20px; }
+
+.wrap .content .alert {
+  margin-top: 20px;
+  font-style: inherit; }

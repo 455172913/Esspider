@@ -1,0 +1,42 @@
+        @-webkit-keyframes toast {
+            0% {
+                -webkit-transform: translate3d(0px, -52px, 0px);
+                -moz-transform: translate3d(0px, -52px, 0px);
+                transform: translate3d(0px, -52px, 0px);
+            }
+            15% {
+                -webkit-transform: translate3d(0px, 0px, 0px);
+                -moz-transform: translate3d(0px, 0px, 0px);
+                transform: translate3d(0px, 0px, 0px);
+            }
+            85% {
+                -webkit-transform: translate3d(0px, 0px, 0px);
+                -moz-transform: translate3d(0px, 0px, 0px);
+                transform: translate3d(0px, 0px, 0px);
+            }
+            100% {
+                -webkit-transform: translate3d(0px, -52px, 0px);
+                -moz-transform: translate3d(0px, -52px, 0px);
+                transform: translate3d(0px, -52px, 0px);
+            }
+        }
+
+        .toast-animation {
+            -webkit-animation: toast 5s;
+            -moz-animation: toast 5s;
+            animation: toast 5s;
+        }
+        .toast {
+            -webkit-transition: transform 800ms ease-out;
+            -moz-transition: transform 800ms ease-out;
+            transition: transform 800ms ease-out;
+            -webkit-transform: translate3d(0px, -52px, 0px);
+            -moz-transform: translate3d(0px, -52px, 0px);
+            transform: translate3d(0px, -52px, 0px);
+            position: fixed;
+            width: 500px;
+            top: 0px;
+            left: 50%;
+            margin-left: -250px;
+            z-index: 9999;
+        }

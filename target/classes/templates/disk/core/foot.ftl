@@ -1,0 +1,1 @@
+<#-- foot.ftl --><script src="/disk/js/lib/jquery-a2aa124ddb.min.js"></script><script src="/disk/js/lib/bootstrap-datetimepicker-1dcd792c61.js" charset="UTF-8"></script><script src="${script}"></script></body></html>

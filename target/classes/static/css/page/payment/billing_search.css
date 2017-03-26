@@ -1,0 +1,35 @@
+.wrap .to-detail {
+  color: #2bb8aa;
+  cursor: pointer; }
+
+.wrap .search-order .form-horizontal {
+  margin-top: 20px; }
+  .wrap .search-order .form-horizontal .form_datetime {
+    margin: 0 8px; }
+  .wrap .search-order .form-horizontal .font-width {
+    margin-left: 28px; }
+  .wrap .search-order .form-horizontal .choose-shop {
+    float: left; }
+  .wrap .search-order .form-horizontal .ac-wrapper {
+    float: left; }
+  .wrap .search-order .form-horizontal .download {
+    margin-left: 10px; }
+  .wrap .search-order .form-horizontal .choose-state {
+    width: 135px;
+    height: 30px;
+    border-radius: initial;
+    margin-left: 8px; }
+
+.wrap .search-order .search-btn {
+  margin: 20px 0 0 69px;
+  display: inline-block;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  width: 80px;
+  color: #fff;
+  background-color: #fd9c47;
+  border-radius: 4px; }
+
+.wrap .search-order .search-btn:hover {
+  color: #fff; }
