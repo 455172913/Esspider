@@ -32,4 +32,11 @@ public class AdminController {
         return resultMap;
     }
 
+    @RequestMapping(value = "/spider", method = RequestMethod.GET)
+    @ResponseBody
+    Object Spider() {
+        Map resultMap = null;
+        return resultMap;
+    }
+
 }

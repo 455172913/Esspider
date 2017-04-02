@@ -1,5 +1,13 @@
 package com;
 
+import com.service.impl.CrawlerService;
+import org.quartz.CronTrigger;
+import org.quartz.JobDetail;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.impl.JobDetailImpl;
+import org.quartz.impl.StdSchedulerFactory;
+import org.quartz.impl.triggers.CronTriggerImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -11,6 +19,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,8 +33,29 @@ import java.util.Map;
 @ImportResource("classpath*:spring/applicationContext.xml")
 public class Bootstrap {
     public static void main(String[] args) {
-
+        //定时启动
+        try {
+            topicSchedule1();
+        } catch (SchedulerException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        //SpringBoot启动
         SpringApplication.run(Bootstrap.class, args);
+    }
+
+    /**
+     * 定时抓取微博热门话题数据：每天1次：（0:30:01）
+     */
+    public static void topicSchedule1() throws SchedulerException, ParseException {
+        Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
+        JobDetail jobDetail = new JobDetailImpl("fetchTopicJob1", "topicGroup1", CrawlerService.class);
+        CronTrigger trigger = new CronTriggerImpl("cronTrigger", "topicGroup1", "1 30 00 * * ?") {
+        };
+
+        scheduler.scheduleJob(jobDetail, trigger);
+        scheduler.start();
     }
 
 //
