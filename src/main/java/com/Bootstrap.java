@@ -1,5 +1,6 @@
 package com;
 
+import com.service.impl.CrawlerHandler;
 import com.service.impl.CrawlerService;
 import org.quartz.CronTrigger;
 import org.quartz.JobDetail;
@@ -50,7 +51,7 @@ public class Bootstrap {
      */
     public static void topicSchedule1() throws SchedulerException, ParseException {
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
-        JobDetail jobDetail = new JobDetailImpl("fetchTopicJob1", "topicGroup1", CrawlerService.class);
+        JobDetail jobDetail = new JobDetailImpl("fetchTopicJob1", "topicGroup1", CrawlerHandler.class);
         CronTrigger trigger = new CronTriggerImpl("cronTrigger", "topicGroup1", "1 30 00 * * ?") {
         };
 

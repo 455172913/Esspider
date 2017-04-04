@@ -12,18 +12,14 @@ import javax.annotation.Resource;
  * Created by rong on 2017/4/2.
  */
 @Service
-public class CrawlerService implements ICrawlerService , Job {
+public class CrawlerService implements ICrawlerService {
     @Resource
     CrawlerHandler crawlerHandler;
 
-    @Override
-    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        Crawler();
-    }
 
     @Override
-    public boolean Crawler() {
-
+    public boolean crawler() {
+        crawlerHandler.youkuCrawler();
 
         return false;
     }

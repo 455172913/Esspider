@@ -1,5 +1,8 @@
 package com.controller;
 
+import com.VO.CrawlerVo;
+import com.service.ICrawlerSearch;
+import com.service.ICrawlerService;
 import com.service.ISearchService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,16 +31,13 @@ public class AdminController {
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     @ResponseBody
-    Object Search(@RequestParam(value = "search_name", required = true) String search_name) {
+    Object search(@RequestParam(value = "search_name", required = true) String search_name) {
         Map resultMap = searchService.search(search_name);
         return resultMap;
     }
 
-    @RequestMapping(value = "/spider", method = RequestMethod.GET)
-    @ResponseBody
-    Object Spider() {
-        Map resultMap = null;
-        return resultMap;
-    }
+
+
+
 
 }

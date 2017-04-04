@@ -1,3 +1,4 @@
+import com.common.util.DateUtil;
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.RefreshHandler;
@@ -10,6 +11,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Date;
 
 /**
  * Created by rong on 2017/3/31.
@@ -51,17 +53,19 @@ public class youkuList {
 
         Document document= Jsoup.parse(content);
         Elements root=document.select("div.yk-body div[class=yk-rank yk-rank-long] div.item");
-        for (Element element : root){
-            Elements ele_info = element.select("a");
-            Elements ele_count = element.select("span");
-            Elements ele_number = element.select("label");
-            String youku_play_url = ele_info.attr("href");
-            String youku_name = ele_info.text();
-            String youku_count = ele_count.text();
-            String youku_number = ele_number.text();
-            System.out.println( youku_number + " hhh "+youku_name + youku_play_url);
-            System.out.println( youku_count);
-        }
+//        for (Element element : root){
+//            Elements ele_info = element.select("a");
+//            Elements ele_count = element.select("span");
+//            Elements ele_number = element.select("label");
+//            String youku_play_url = ele_info.attr("href");
+//            String youku_name = ele_info.text();
+//            String youku_count = ele_count.text();
+//            String youku_number = ele_number.text();
+//            System.out.println( youku_number + " hhh "+youku_name + youku_play_url);
+//            System.out.println( youku_count);
+//        }
+        System.out.println(DateUtil.format(new Date(),"yyyy-MM-dd"));
+
 //        System.out.println(root.toString());
     }
 }
