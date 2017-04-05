@@ -14,6 +14,11 @@ import org.jsoup.select.Elements;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.scheduling.quartz.JobDetailBean;
+import org.springframework.scheduling.quartz.QuartzJobBean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -27,13 +32,16 @@ import java.util.Date;
  * Created by rong on 2017/4/2.
  */
 @Service
-@Component("testJobComponent")
-public class CrawlerHandler implements Job{
+@Component
+@Configurable
+@EnableScheduling
+public class CrawlerHandler {
     @Resource
     CrawlerRepository crawlerRepository;
+    private static int counter = 0;
 
-    @Override
-    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+    @Scheduled(cron = "1 30 14 * * ?")
+    protected void execute() {
         youkuCrawler();
     }
 
@@ -79,7 +87,9 @@ public class CrawlerHandler implements Job{
             System.out.println( youku_count);
             CrawlerVo crawlerVo = new CrawlerVo();
             crawlerVo.setName(youku_name);
+//            crawlerVo.setId("1");
             crawlerVo.setDomain("youku.com");
+            crawlerVo.setUrl(youku_play_url);
             crawlerVo.setCount(youku_count);
             crawlerVo.setDate(DateUtil.format(new Date(),"yyyy-MM-dd"));
             crawlerRepository.save(crawlerVo);

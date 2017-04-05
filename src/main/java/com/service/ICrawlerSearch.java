@@ -11,4 +11,6 @@ public interface ICrawlerSearch {
     public List<CrawlerVo> findByName(String name);
 
     public void deleteAll();
+
+    public long getcount();
 }

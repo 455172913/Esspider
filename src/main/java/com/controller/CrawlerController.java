@@ -54,7 +54,6 @@ public class CrawlerController {
     @RequestMapping(value = "/getcount", method = RequestMethod.GET)
     @ResponseBody
     Object getCount() {
-        crawlerSearch.deleteAll();
-        return true;
+        return crawlerSearch.getcount();
     }
 }

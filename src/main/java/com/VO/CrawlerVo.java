@@ -19,6 +19,7 @@ public class CrawlerVo {
     private String date;
     private String count;
     private Integer number;
+    private String url;
 
     public CrawlerVo(String id, String name, String domain, String date, String count, Integer number) {
         this.id = id;
@@ -79,5 +80,13 @@ public class CrawlerVo {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
