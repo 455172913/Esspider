@@ -20,6 +20,7 @@ public class CrawlerService implements ICrawlerService {
     @Override
     public boolean crawler() {
         crawlerHandler.youkuCrawler();
+        crawlerHandler.souhuCrawler();
 
         return false;
     }
