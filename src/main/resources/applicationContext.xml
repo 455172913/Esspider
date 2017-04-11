@@ -6,40 +6,40 @@
 
     <import resource="applicationContext-mybatis.xml" />
     <import resource="spring-mvc.xml"/>
-    <bean id="SpringQtzJob" class="com.service.impl.CrawlerHandler">
+    <!--<bean id="SpringQtzJob" class="com.service.impl.CrawlerHandler">-->
 
-    </bean>
+    <!--</bean>-->
 
-    <bean id="SpringQtzJobMethod"
-          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-        <property name="targetObject">
-            <ref bean="SpringQtzJob" />
-        </property>
-        <property name="targetMethod">  <!-- 要执行的方法名称 -->
-            <value>execute</value>
-        </property>
-    </bean>
+    <!--<bean id="SpringQtzJobMethod"-->
+          <!--class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+        <!--<property name="targetObject">-->
+            <!--<ref bean="SpringQtzJob" />-->
+        <!--</property>-->
+        <!--<property name="targetMethod">  &lt;!&ndash; 要执行的方法名称 &ndash;&gt;-->
+            <!--<value>execute</value>-->
+        <!--</property>-->
+    <!--</bean>-->
 
-    <!-- ======================== 调度触发器 ======================== -->
-    <bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
-        <property name="jobDetail" ref="SpringQtzJobMethod"></property>
-        <property name="cronExpression" value="0/5 * * * * ?"></property>
-    </bean>
+    <!--&lt;!&ndash; ======================== 调度触发器 ======================== &ndash;&gt;-->
+    <!--<bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+        <!--<property name="jobDetail" ref="SpringQtzJobMethod"></property>-->
+        <!--<property name="cronExpression" value="0/5 * * * * ?"></property>-->
+    <!--</bean>-->
 
-    <!-- ======================== 调度工厂 ======================== -->
-    <bean id="SpringJobSchedulerFactoryBean"
-          class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
-        <property name="triggers">
-            <list>
-                <ref bean="CronTriggerBean" />
-            </list>
-        </property>
-        <property name="jobDetails">
-            <list>
-                <ref bean="SpringQtzJobMethod" />
-            </list>
-        </property>
-    </bean>
+    <!--&lt;!&ndash; ======================== 调度工厂 ======================== &ndash;&gt;-->
+    <!--<bean id="SpringJobSchedulerFactoryBean"-->
+          <!--class="org.springframework.scheduling.quartz.SchedulerFactoryBean">-->
+        <!--<property name="triggers">-->
+            <!--<list>-->
+                <!--<ref bean="CronTriggerBean" />-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="jobDetails">-->
+            <!--<list>-->
+                <!--<ref bean="SpringQtzJobMethod" />-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
 
 
 

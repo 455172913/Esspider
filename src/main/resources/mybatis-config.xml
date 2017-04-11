@@ -15,6 +15,4 @@
         <!-- 是否使用插入数据后自增主键的值，需要配合keyProperty使用 -->
         <setting name="useGeneratedKeys" value="true"/>
     </settings>
-    <typeHandlers>
-    </typeHandlers>
 </configuration>

@@ -1,7 +1,8 @@
 package com.service.impl;
 
-import com.VO.CrawlerVo;
 import com.common.util.DateUtil;
+import com.dao.TeleplayDOMapper;
+import com.domain.TeleplayDO;
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.RefreshHandler;
@@ -12,14 +13,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.quartz.Job;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.scheduling.quartz.JobDetailBean;
-import org.springframework.scheduling.quartz.QuartzJobBean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +38,9 @@ public class CrawlerHandler {
 
     @Resource
     CrawlerRepository crawlerRepository;
+
+    @Resource
+    TeleplayDOMapper teleplayDOMapper;
     private static int counter = 0;
 
     @Scheduled(cron = "1 30 14 * * ?")
@@ -107,20 +106,25 @@ public class CrawlerHandler {
             Elements ele_info = element.select("ul.info-list");
             Elements ele_name = ele_info.select("li.title a");
             Element ele_count = ele_info.select("li").get(2);
-            String youku_play_url = ele_name.attr("href");
+            String youku_play_url = "http:"+ele_name.attr("href");
             String youku_name = ele_name.attr("title");
             String youku_count = ele_count.text();
             System.out.println(" hhh "+youku_name + youku_play_url);
             System.out.println( youku_count);
-            CrawlerVo crawlerVo = new CrawlerVo();
-            crawlerVo.setName(youku_name);
-            crawlerVo.setId(String.valueOf(crawlerSearch.getcount()+1));
-            crawlerVo.setDomain("youku.com");
-            crawlerVo.setUrl(youku_play_url);
-            crawlerVo.setCount(youku_count);
-            crawlerVo.setNumber(i+1);
-            crawlerVo.setDate(DateUtil.format(new Date(),"yyyy-MM-dd"));
-            crawlerRepository.save(crawlerVo);
+            TeleplayDO teleplayDO = new TeleplayDO();
+            teleplayDO.setName(youku_name);
+//            teleplayDO.setId(String.valueOf(crawlerSearch.getcount()+1));
+            teleplayDO.setDomain("youku.com");
+            teleplayDO.setUrl(youku_play_url);
+            teleplayDO.setCount(youku_count);
+            teleplayDO.setDate(DateUtil.format(new Date(),"yyyy-MM-dd"));
+            teleplayDO.setNumber(i+1);
+            teleplayDOMapper.insert(teleplayDO);
+            try {
+                Thread.sleep(1000*1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -161,17 +165,22 @@ public class CrawlerHandler {
             String souhu_name = ele_name.attr("title");
             String souhu_play_url = ele_name.attr("href");
             String souhu_count = ele_count.text();
-            CrawlerVo crawlerVo = new CrawlerVo();
-            crawlerVo.setName(souhu_name);
-            crawlerVo.setId(String.valueOf(crawlerSearch.getcount()+1));
-            crawlerVo.setDomain("souhu.com");
-            crawlerVo.setUrl(souhu_play_url);
-            crawlerVo.setCount(souhu_count);
-            crawlerVo.setId(String.valueOf(crawlerSearch.getcount()+1));
-            crawlerVo.setNumber(i+1);
-            crawlerRepository.save(crawlerVo);
+            TeleplayDO teleplayDO = new TeleplayDO();
+            teleplayDO.setName(souhu_name);
+//            teleplayDO.setId(String.valueOf(crawlerSearch.getcount()+1));
+            teleplayDO.setDomain("souhu.com");
+            teleplayDO.setUrl(souhu_play_url);
+            teleplayDO.setCount(souhu_count);
+            teleplayDO.setDate(DateUtil.format(new Date(),"yyyy-MM-dd"));
+            teleplayDO.setNumber(i+1);
+            teleplayDOMapper.insert(teleplayDO);
             System.out.println(souhu_name + ":" +souhu_count);
             System.out.println(souhu_play_url);
+            try {
+                Thread.sleep(1000*1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

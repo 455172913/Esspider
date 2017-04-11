@@ -10,14 +10,16 @@
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:annotation-config/>
+    <context:component-scan base-package="com.config"></context:component-scan>
 
-
-    <!-- settle -->
+    <!-- pos -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
-        <property name="mapperLocations" value="classpath*:mybatis/mapper/settle/*.xml"/>
+        <property name="configLocation" value="classpath:/mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath*:mybatis/*.xml"/>
     </bean>
+
 
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg ref="sqlSessionFactory"/>
@@ -25,7 +27,6 @@
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
-        <qualifier value="settleTransactionManager"/>
     </bean>
 
     <!-- 启动对@Aspectj的支持 -->
@@ -35,33 +36,8 @@
     <!-- 配置扫描Mapper接口的包路径 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-        <property name="basePackage" value="com.meituan.zcm.settle.admin.dao.settle"/>
-    </bean>
-
-
-
-
-    <bean id="sqlSessionFactory_pos" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource_pay"/>
-        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
-        <property name="mapperLocations" value="classpath*:mybatis/mapper/pay/*.xml"/>
-    </bean>
-
-
-    <bean id="sqlSessionTemplate_pos" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg ref="sqlSessionFactory_pos"/>
-    </bean>
-
-    <bean id="transactionManager_pos" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource_pay"/>
-    </bean>
-
-    <!-- 启动对@Aspectj的支持 -->
-    <aop:aspectj-autoproxy  expose-proxy="true" proxy-target-class="true" />
-    <tx:annotation-driven transaction-manager="transactionManager_pos" />
-
-    <!-- 配置扫描Mapper接口的包路径 -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.dao"/>
+        <property name="annotationClass" value="com.domain.TeleplayDO"/>
     </bean>
     <!-- pos end -->
 
