@@ -1,7 +1,5 @@
 package com.domain;
 
-import java.util.Date;
-
 public class TeleplayDO {
     private Integer id;
 
@@ -19,9 +17,9 @@ public class TeleplayDO {
 
     private Integer number;
 
-    private Date inserttime;
+    private Long inserttime;
 
-    private Date updatetime;
+    private Long updatetime;
 
     public Integer getId() {
         return id;
@@ -87,19 +85,19 @@ public class TeleplayDO {
         this.number = number;
     }
 
-    public Date getInserttime() {
+    public Long getInserttime() {
         return inserttime;
     }
 
-    public void setInserttime(Date inserttime) {
+    public void setInserttime(Long inserttime) {
         this.inserttime = inserttime;
     }
 
-    public Date getUpdatetime() {
+    public Long getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(Date updatetime) {
+    public void setUpdatetime(Long updatetime) {
         this.updatetime = updatetime;
     }
 }

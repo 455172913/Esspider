@@ -1,10 +1,9 @@
 package com.dao;
 
 import com.domain.TeleplayDO;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-@Repository(value = "TeleplayDOMapper")
+@Repository
 public interface TeleplayDOMapper {
     int deleteByPrimaryKey(Integer id);
 

@@ -29,7 +29,7 @@ import java.util.Map;
         @PropertySource("classpath:config.properties"),
         @PropertySource("classpath:database.properties")
 })
-@ImportResource("classpath*:spring/applicationContext.xml")
+@ImportResource("classpath*:/applicationContext.xml")
 public class Bootstrap {
     public static void main(String[] args) {
 //        //定时启动

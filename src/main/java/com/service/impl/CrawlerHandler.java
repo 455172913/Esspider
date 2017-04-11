@@ -77,28 +77,6 @@ public class CrawlerHandler {
             e.printStackTrace();
         }
 
-//        Document document= Jsoup.parse(content);
-//        Elements root=document.select("div.yk-body div[class=yk-rank yk-rank-long] div.item");
-//        for (Element element : root){
-//            Elements ele_info = element.select("a");
-//            Elements ele_count = element.select("span");
-//            Elements ele_number = element.select("label");
-//            String youku_play_url = ele_info.attr("href");
-//            String youku_name = ele_info.text();
-//            String youku_count = ele_count.text();
-//            String youku_number = ele_number.text();
-//            System.out.println( youku_number + " hhh "+youku_name + youku_play_url);
-//            System.out.println( youku_count);
-//            CrawlerVo crawlerVo = new CrawlerVo();
-//            crawlerVo.setName(youku_name);
-////            crawlerVo.setId("1");
-//            crawlerVo.setDomain("youku.com");
-//            crawlerVo.setUrl(youku_play_url);
-//            crawlerVo.setCount(youku_count);
-//            crawlerVo.setDate(DateUtil.format(new Date(),"yyyy-MM-dd"));
-//            crawlerRepository.save(crawlerVo);
-//        }
-
         Document document= Jsoup.parse(content);
         Elements root=document.select("div.box-series ul.panel li[class=yk-col4 mr1]");
         for (int i = 0; i<root.size();i++){
@@ -119,6 +97,7 @@ public class CrawlerHandler {
             teleplayDO.setCount(youku_count);
             teleplayDO.setDate(DateUtil.format(new Date(),"yyyy-MM-dd"));
             teleplayDO.setNumber(i+1);
+            teleplayDO.setInserttime(System.currentTimeMillis());
             teleplayDOMapper.insert(teleplayDO);
             try {
                 Thread.sleep(1000*1);
@@ -167,12 +146,12 @@ public class CrawlerHandler {
             String souhu_count = ele_count.text();
             TeleplayDO teleplayDO = new TeleplayDO();
             teleplayDO.setName(souhu_name);
-//            teleplayDO.setId(String.valueOf(crawlerSearch.getcount()+1));
             teleplayDO.setDomain("souhu.com");
             teleplayDO.setUrl(souhu_play_url);
             teleplayDO.setCount(souhu_count);
             teleplayDO.setDate(DateUtil.format(new Date(),"yyyy-MM-dd"));
             teleplayDO.setNumber(i+1);
+            teleplayDO.setInserttime(System.currentTimeMillis());
             teleplayDOMapper.insert(teleplayDO);
             System.out.println(souhu_name + ":" +souhu_count);
             System.out.println(souhu_play_url);
