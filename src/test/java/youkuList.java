@@ -133,8 +133,6 @@ public class youkuList {
 //            crawlerVo.setId("1");
             crawlerVo.setDomain("youku.com");
             crawlerVo.setUrl(youku_play_url);
-            crawlerVo.setCount(youku_count);
-            crawlerVo.setDate(DateUtil.format(new Date(),"yyyy-MM-dd"));
 //            crawlerRepository.save(crawlerVo);
         }
     }

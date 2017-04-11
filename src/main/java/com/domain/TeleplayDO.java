@@ -7,7 +7,9 @@ public class TeleplayDO {
 
     private String domain;
 
-    private String date;
+    private String insertdate;
+
+    private String updatedate;
 
     private String count;
 
@@ -45,12 +47,20 @@ public class TeleplayDO {
         this.domain = domain == null ? null : domain.trim();
     }
 
-    public String getDate() {
-        return date;
+    public String getInsertdate() {
+        return insertdate;
     }
 
-    public void setDate(String date) {
-        this.date = date == null ? null : date.trim();
+    public void setInsertdate(String insertdate) {
+        this.insertdate = insertdate == null ? null : insertdate.trim();
+    }
+
+    public String getUpdatedate() {
+        return updatedate;
+    }
+
+    public void setUpdatedate(String updatedate) {
+        this.updatedate = updatedate == null ? null : updatedate.trim();
     }
 
     public String getCount() {

@@ -1,6 +1,9 @@
 package com.controller;
 
 import com.VO.CrawlerVo;
+import com.common.util.BizCodeEnum;
+import com.common.util.ResponseUtils;
+import com.google.common.collect.ImmutableMap;
 import com.service.ICrawlerSearch;
 import com.service.ICrawlerService;
 import com.service.ISearchService;
@@ -32,8 +35,17 @@ public class AdminController {
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     @ResponseBody
     Object search(@RequestParam(value = "search_name", required = true) String search_name) {
-        Map resultMap = searchService.search(search_name);
-        return resultMap;
+        Map resultMap = null;
+        try {
+            resultMap = searchService.search(search_name);
+            return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
+                    .put("result",resultMap)
+                    .build(), BizCodeEnum.SUCCESS.code, "success");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
+
     }
 
 

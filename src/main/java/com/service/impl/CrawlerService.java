@@ -21,6 +21,7 @@ public class CrawlerService implements ICrawlerService {
     public boolean crawler() {
         crawlerHandler.youkuCrawler();
         crawlerHandler.souhuCrawler();
+        crawlerHandler.doubanCrawler();
 
         return false;
     }

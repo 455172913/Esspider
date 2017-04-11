@@ -5,7 +5,8 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="domain" jdbcType="VARCHAR" property="domain" />
-    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="insertDate" jdbcType="VARCHAR" property="insertdate" />
+    <result column="updateDate" jdbcType="VARCHAR" property="updatedate" />
     <result column="count" jdbcType="VARCHAR" property="count" />
     <result column="rate" jdbcType="VARCHAR" property="rate" />
     <result column="url" jdbcType="VARCHAR" property="url" />
@@ -14,13 +15,19 @@
     <result column="updateTime" jdbcType="BIGINT" property="updatetime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, domain, date, count, rate, url, number, insertTime, updateTime
+    id, name, domain, insertDate, updateDate, count, rate, url, number, insertTime, updateTime
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByUrl" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from teleplaylist
-    where id = #{id,jdbcType=INTEGER}
+    where url = #{url,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByDate" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from teleplaylist
+    where insertDate = #{insertDate,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from teleplaylist
@@ -28,13 +35,13 @@
   </delete>
   <insert id="insert" parameterType="com.domain.TeleplayDO">
     insert into teleplaylist (id, name, domain, 
-      date, count, rate, 
-      url, number, insertTime, 
-      updateTime)
+      insertDate, updateDate, count, 
+      rate, url, number, 
+      insertTime, updateTime)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{domain,jdbcType=VARCHAR}, 
-      #{date,jdbcType=VARCHAR}, #{count,jdbcType=VARCHAR}, #{rate,jdbcType=VARCHAR}, 
-      #{url,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER}, #{inserttime,jdbcType=BIGINT}, 
-      #{updatetime,jdbcType=BIGINT})
+      #{insertdate,jdbcType=VARCHAR}, #{updatedate,jdbcType=VARCHAR}, #{count,jdbcType=VARCHAR}, 
+      #{rate,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER}, 
+      #{inserttime,jdbcType=BIGINT}, #{updatetime,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.domain.TeleplayDO">
     insert into teleplaylist
@@ -48,8 +55,11 @@
       <if test="domain != null">
         domain,
       </if>
-      <if test="date != null">
-        date,
+      <if test="insertdate != null">
+        insertDate,
+      </if>
+      <if test="updatedate != null">
+        updateDate,
       </if>
       <if test="count != null">
         count,
@@ -80,8 +90,11 @@
       <if test="domain != null">
         #{domain,jdbcType=VARCHAR},
       </if>
-      <if test="date != null">
-        #{date,jdbcType=VARCHAR},
+      <if test="insertdate != null">
+        #{insertdate,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null">
+        #{updatedate,jdbcType=VARCHAR},
       </if>
       <if test="count != null">
         #{count,jdbcType=VARCHAR},
@@ -112,8 +125,11 @@
       <if test="domain != null">
         domain = #{domain,jdbcType=VARCHAR},
       </if>
-      <if test="date != null">
-        date = #{date,jdbcType=VARCHAR},
+      <if test="insertdate != null">
+        insertDate = #{insertdate,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null">
+        updateDate = #{updatedate,jdbcType=VARCHAR},
       </if>
       <if test="count != null">
         count = #{count,jdbcType=VARCHAR},
@@ -140,7 +156,8 @@
     update teleplaylist
     set name = #{name,jdbcType=VARCHAR},
       domain = #{domain,jdbcType=VARCHAR},
-      date = #{date,jdbcType=VARCHAR},
+      insertDate = #{insertdate,jdbcType=VARCHAR},
+      updateDate = #{updatedate,jdbcType=VARCHAR},
       count = #{count,jdbcType=VARCHAR},
       rate = #{rate,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},

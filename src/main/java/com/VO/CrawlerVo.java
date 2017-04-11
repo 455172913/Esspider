@@ -12,26 +12,29 @@ import java.util.Date;
 public class CrawlerVo {
 
     @Id
-    private String  id;
+    private Integer id;
 
-    private String  name;
+    private String name;
+
     private String domain;
-    private String date;
-    private String count;
-    private Integer number;
+
     private String url;
 
-    public CrawlerVo(String id, String name, String domain, String date, String count, Integer number) {
+    public CrawlerVo(Integer id, String name, String domain, String url) {
         this.id = id;
         this.name = name;
         this.domain = domain;
-        this.date = date;
-        this.count = count;
-        this.number = number;
+        this.url = url;
+    }
+    public CrawlerVo() {
     }
 
-    public CrawlerVo(){
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -48,38 +51,6 @@ public class CrawlerVo {
 
     public void setDomain(String domain) {
         this.domain = domain;
-    }
-
-    public void setCount(String count) {
-        this.count = count;
-    }
-
-    public String getCount() {
-        return count;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public String getUrl() {

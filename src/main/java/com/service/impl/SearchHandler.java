@@ -82,7 +82,8 @@ public class SearchHandler {
 
     public List iqiyiHandler(String search_name ){
         List iqiyi_search_list = new ArrayList();
-        String url = "http://so.iqiyi.com/so/q_SEARCH_NAME";
+//        String url = "http://so.iqiyi.com/so/q_SEARCH_NAME";
+        String url = iqiyi_search_url;
         url = url.replace("SEARCH_NAME",search_name);
         WebClient client = CrawlerUtils.getClient();
         String content = null;
@@ -127,7 +128,8 @@ public class SearchHandler {
 
     public List souhuHandler(String search_name ){
         List souhu_search_list = new ArrayList();
-        String url = "http://so.tv.sohu.com/mts?wd=SEARCH_NAME";
+//        String url = "http://so.tv.sohu.com/mts?wd=SEARCH_NAME";
+        String url = souhu_search_url;
         WebClient client = CrawlerUtils.getClient();
         String content = null;
         String temp_name = URLEncoder.encode(search_name);
@@ -168,7 +170,8 @@ public class SearchHandler {
 
     public List tengxunHandler(String search_name ){
         List tengxun_search_list = new ArrayList();
-        String url = "https://v.qq.com/x/search/?q=SEARCH_NAME";
+//        String url = "https://v.qq.com/x/search/?q=SEARCH_NAME";
+        String url = tengxun_search_url;
         String ss = URLEncoder.encode(search_name);
         url = url.replace("SEARCH_NAME",ss);
         String content = null;
