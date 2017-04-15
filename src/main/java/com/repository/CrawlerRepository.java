@@ -6,9 +6,9 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 import java.util.List;
 
 
-public interface CrawlerRepository extends ElasticsearchRepository<CrawlerVo, String> {
+public interface CrawlerRepository extends ElasticsearchRepository<CrawlerVo, Integer> {
 
-    CrawlerVo findById(String id);
+    CrawlerVo findById(Integer id);
 
 //    List<CrawlerVo> findByAuthorName(String authorName);
 //

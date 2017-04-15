@@ -39,7 +39,7 @@ import java.util.List;
 @Configurable
 @EnableScheduling
 public class CrawlerHandler {
-    @Value("${youku_search_url}")
+    @Value("${youku_crawler_url}")
     private String youku_crawler_url;
     @Value("${souhu_crawler_url}")
     private String souhu_crawler_url;
