@@ -31,6 +31,8 @@ public class CrawlerController {
     @Resource
     DBToSearch dbToSearch;
 
+
+
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @ResponseBody
     public String helloWorld() {
