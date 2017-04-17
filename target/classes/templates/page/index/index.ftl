@@ -45,7 +45,7 @@
                         <h2><span class="grey">爬虫影视</span> - 搜搜搜</h2>
                     </div>
                     <div class="banner-heading text-center">
-                        <h3>关键字</h3>
+                        <h3>输入你的搜索内容.</h3>
                     </div>
                     <div class="banner-search col-md-offset-2 col-md-8 col-md-offset-2">
                         <div class="col-md-3">
@@ -59,7 +59,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" id="content" class="form-control selltwo" placeholder="Atlanta, GA"/>
+                                <input type="text" id="content" class="form-control selltwo" placeholder="关键字"/>
                             </div>
                         </div>
                         <div class="col-md-3">
