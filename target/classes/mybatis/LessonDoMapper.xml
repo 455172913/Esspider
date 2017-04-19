@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.LessonDoMapper">
+  <resultMap id="BaseResultMap" type="com.domain.LessonDo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="lessonName" jdbcType="VARCHAR" property="lessonname" />
+    <result column="teacherId" jdbcType="INTEGER" property="teacherid" />
+    <result column="teacherName" jdbcType="VARCHAR" property="teachername" />
+    <result column="lessonStart" jdbcType="VARCHAR" property="lessonstart" />
+    <result column="sessonEnd" jdbcType="VARCHAR" property="sessonend" />
+    <result column="weekDay" jdbcType="VARCHAR" property="weekday" />
+    <result column="lessonNum" jdbcType="VARCHAR" property="lessonnum" />
+    <result column="callCount" jdbcType="VARCHAR" property="callcount" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.domain.LessonDo">
+    <result column="teachPro" jdbcType="LONGVARCHAR" property="teachpro" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, lessonName, teacherId, teacherName, lessonStart, sessonEnd, weekDay, lessonNum, 
+    callCount
+  </sql>
+  <sql id="Blob_Column_List">
+    teachPro
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from lesson
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from lesson
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.domain.LessonDo">
+    insert into lesson (id, lessonName, teacherId, 
+      teacherName, lessonStart, sessonEnd, 
+      weekDay, lessonNum, callCount, 
+      teachPro)
+    values (#{id,jdbcType=INTEGER}, #{lessonname,jdbcType=VARCHAR}, #{teacherid,jdbcType=INTEGER}, 
+      #{teachername,jdbcType=VARCHAR}, #{lessonstart,jdbcType=VARCHAR}, #{sessonend,jdbcType=VARCHAR}, 
+      #{weekday,jdbcType=VARCHAR}, #{lessonnum,jdbcType=VARCHAR}, #{callcount,jdbcType=VARCHAR}, 
+      #{teachpro,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.domain.LessonDo">
+    insert into lesson
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="lessonname != null">
+        lessonName,
+      </if>
+      <if test="teacherid != null">
+        teacherId,
+      </if>
+      <if test="teachername != null">
+        teacherName,
+      </if>
+      <if test="lessonstart != null">
+        lessonStart,
+      </if>
+      <if test="sessonend != null">
+        sessonEnd,
+      </if>
+      <if test="weekday != null">
+        weekDay,
+      </if>
+      <if test="lessonnum != null">
+        lessonNum,
+      </if>
+      <if test="callcount != null">
+        callCount,
+      </if>
+      <if test="teachpro != null">
+        teachPro,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="lessonname != null">
+        #{lessonname,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherid != null">
+        #{teacherid,jdbcType=INTEGER},
+      </if>
+      <if test="teachername != null">
+        #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="lessonstart != null">
+        #{lessonstart,jdbcType=VARCHAR},
+      </if>
+      <if test="sessonend != null">
+        #{sessonend,jdbcType=VARCHAR},
+      </if>
+      <if test="weekday != null">
+        #{weekday,jdbcType=VARCHAR},
+      </if>
+      <if test="lessonnum != null">
+        #{lessonnum,jdbcType=VARCHAR},
+      </if>
+      <if test="callcount != null">
+        #{callcount,jdbcType=VARCHAR},
+      </if>
+      <if test="teachpro != null">
+        #{teachpro,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.domain.LessonDo">
+    update lesson
+    <set>
+      <if test="lessonname != null">
+        lessonName = #{lessonname,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherid != null">
+        teacherId = #{teacherid,jdbcType=INTEGER},
+      </if>
+      <if test="teachername != null">
+        teacherName = #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="lessonstart != null">
+        lessonStart = #{lessonstart,jdbcType=VARCHAR},
+      </if>
+      <if test="sessonend != null">
+        sessonEnd = #{sessonend,jdbcType=VARCHAR},
+      </if>
+      <if test="weekday != null">
+        weekDay = #{weekday,jdbcType=VARCHAR},
+      </if>
+      <if test="lessonnum != null">
+        lessonNum = #{lessonnum,jdbcType=VARCHAR},
+      </if>
+      <if test="callcount != null">
+        callCount = #{callcount,jdbcType=VARCHAR},
+      </if>
+      <if test="teachpro != null">
+        teachPro = #{teachpro,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.domain.LessonDo">
+    update lesson
+    set lessonName = #{lessonname,jdbcType=VARCHAR},
+      teacherId = #{teacherid,jdbcType=INTEGER},
+      teacherName = #{teachername,jdbcType=VARCHAR},
+      lessonStart = #{lessonstart,jdbcType=VARCHAR},
+      sessonEnd = #{sessonend,jdbcType=VARCHAR},
+      weekDay = #{weekday,jdbcType=VARCHAR},
+      lessonNum = #{lessonnum,jdbcType=VARCHAR},
+      callCount = #{callcount,jdbcType=VARCHAR},
+      teachPro = #{teachpro,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.domain.LessonDo">
+    update lesson
+    set lessonName = #{lessonname,jdbcType=VARCHAR},
+      teacherId = #{teacherid,jdbcType=INTEGER},
+      teacherName = #{teachername,jdbcType=VARCHAR},
+      lessonStart = #{lessonstart,jdbcType=VARCHAR},
+      sessonEnd = #{sessonend,jdbcType=VARCHAR},
+      weekDay = #{weekday,jdbcType=VARCHAR},
+      lessonNum = #{lessonnum,jdbcType=VARCHAR},
+      callCount = #{callcount,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

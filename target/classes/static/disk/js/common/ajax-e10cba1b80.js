@@ -1,1 +1,0 @@
-define(function(){function n(n){var e={type:"get",url:"",dataType:"json",processData:!0};return n=$.extend(e,n),n.data=n.data||{},$.ajax(n).done(function(e){n.cb&&n.cb()}).fail(function(e){console.log("系统错误"),n.error&&n.error()})}return n});

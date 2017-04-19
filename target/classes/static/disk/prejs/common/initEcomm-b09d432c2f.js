@@ -1,1 +1,0 @@
-define(function(){function o(o){if(window!=window.top){document.domain="meituan.com",window.top.location.hash=location.href;var t=$("iframe",window.parent.document).attr("height"),n=document.body.clientHeight;window.top.resizeIframeHeight(Math.max(t,n)),window.top.document.body.scrollTop=0,o&&window.top.updateSidebar(o)}}return o});
