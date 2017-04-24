@@ -3,6 +3,7 @@ package com.controller;
 import com.VO.CrawlerVo;
 import com.common.util.BizCodeEnum;
 import com.common.util.ResponseUtils;
+import com.domain.TeleplayDO;
 import com.google.common.collect.ImmutableMap;
 import com.service.ICrawlerSearch;
 import com.service.ICrawlerService;
@@ -58,7 +59,7 @@ public class CrawlerController {
     @RequestMapping(value = "/crawlerSearch", method = RequestMethod.GET)
     @ResponseBody
     Object crawlerSearch(@RequestParam(value = "name", required = true) String name) {
-        List<CrawlerVo> result = null;
+        List<TeleplayDO> result = null;
         try {
             result = crawlerSearch.findByName(name);
             return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()

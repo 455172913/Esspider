@@ -107,12 +107,7 @@
         <div class="navbar">
             <div class="logo"><a  href="/admin/index"><span style="color:red;">影视</span>爬虫 </a></div>
             <ul class="mynav">
-                <li><a href="#" class="active">待定</a></li>
-                <li><a href="#">待定</a></li>
-                <li><a href="#">待定</a></li>
-                <li><a href="#">待定</a></li>
-                <li><a href="#">待定</a></li>
-                <li><a href="#">待定</a></li>
+                <li><a href="/admin/detailPage" class="active">日常采集结果</a></li>
             </ul>
         </div>
     </div>
@@ -136,7 +131,6 @@
         <!-- 清除浮动 -->
     </div>
 </div>
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
     // 预加载
     $(function(){

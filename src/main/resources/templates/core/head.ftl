@@ -16,4 +16,6 @@
     <#--<link rel="stylesheet" href="/css/lib/owl.carousel.css">-->
     <#--<link rel="stylesheet" href="/css/lib/owl.theme.css">-->
     <script data-main="/js/main" src="/js/lib/require.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+
 

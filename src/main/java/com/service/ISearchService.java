@@ -1,5 +1,8 @@
 package com.service;
 
+import com.domain.TeleplayDO;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -7,4 +10,6 @@ import java.util.Map;
  */
 public interface ISearchService {
     public Map search(String search_name,Integer type);
+
+    public List detail(Integer type);
 }

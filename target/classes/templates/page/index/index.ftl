@@ -1,7 +1,6 @@
 <#include "/core/frame.ftl">
 <@html css="/css/index/style.css">
 
-<script src="/index/js/jquery-1.9.1.min.js"></script>
 <link rel="stylesheet" href="/css/lib/bootstrap.css">
 
 <!--header starts-->
@@ -23,12 +22,7 @@
                             </div>
                             <div class="collapse navbar-collapse navbar-right" id="myNavbar">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="#">待定</a></li>
-                                    <li><a href="#listed">待定</a></li>
-                                    <li><a href="#agents">待定</a></li>
-                                    <li><a href="#gallery">待定</a></li>
-                                    <li><a href="#news">待定</a></li>
-                                    <li><a href="#contact">待定</a></li>
+                                    <li class="active"><a href="/admin/detailPage" class="active">日常采集结果</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -42,7 +36,7 @@
             <div class="container">
                 <div class="row">
                     <div class="banner-info text-center">
-                        <h2><span class="grey">爬虫影视</span> - 搜搜搜</h2>
+                        <h2><span class="grey">影视爬虫</span> - 搜搜搜</h2>
                     </div>
                     <div class="banner-heading text-center">
                         <h3>输入你的搜索内容.</h3>
@@ -64,7 +58,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-btn">
-                                <button type="submit" onclick="indexSearch();">Search</button>
+                                <button type="submit" id="enter" onclick="indexSearch();">Search</button>
                             </div>
                         </div>
                     </div>
@@ -80,8 +74,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="intro-text text-center">
-                    <h3>We Fullfill Your Dream</h3>
-                    <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed <span style="display:block;">sed dolor lorem cras adipiscing</span></p>
+                    <h3>影视爬虫，节省你的时间！</h3>
                 </div>
             </div>
         </div>
@@ -104,7 +97,14 @@
         window.location.href="/admin/search?type=" + type + "&search_name=" + content;
 
     }
-</script>
 
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#enter").keydown(function(){
+            indexSearch();
+        });
+    });
+</script>
 
 </@html>

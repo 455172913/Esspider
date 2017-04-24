@@ -1,13 +1,13 @@
 package com.service.impl;
 
+import com.common.util.DateUtil;
+import com.dao.TeleplayDOMapper;
+import com.domain.TeleplayDO;
 import com.service.ISearchService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by rong on 2017/3/26.
@@ -16,6 +16,9 @@ import java.util.Map;
 public class SearchServiceImpl  implements ISearchService{
     @Resource
     private SearchHandler searchHandler;
+
+    @Resource
+    TeleplayDOMapper teleplayDOMapper;
 
 
     public Map search(String search_name,Integer type){
@@ -52,4 +55,20 @@ public class SearchServiceImpl  implements ISearchService{
         return search_result;
     }
 
+    @Override
+    public List detail(Integer type) {
+        String date =  DateUtil.format(new Date(),"yyyy-MM-dd");
+        Map map = new HashMap();
+        List list = new ArrayList();
+        if (type == 1){
+            list.addAll(teleplayDOMapper.selectByDomain(date,"youku.com"));
+        }
+        else if (type == 2){
+            list.addAll(teleplayDOMapper.selectByDomain(date,"souhu.com"));
+        }
+        else if (type == 3){
+            list.addAll(teleplayDOMapper.selectByDomain(date,"douban.com"));
+        }
+        return list;
+    }
 }

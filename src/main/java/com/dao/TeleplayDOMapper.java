@@ -1,6 +1,7 @@
 package com.dao;
 
 import com.domain.TeleplayDO;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,9 +16,13 @@ public interface TeleplayDOMapper {
 
     TeleplayDO selectByUrl(String url);
 
+    TeleplayDO selectByNameDomain(@Param("name")String name,@Param("domain") String domain);
+
     int updateByPrimaryKeySelective(TeleplayDO record);
 
     int updateByPrimaryKey(TeleplayDO record);
 
-    List<TeleplayDO> selectByDate(String date);
+    List<TeleplayDO> selectByDomain(@Param("updateDate") String updateDate, @Param("domain")String domain);
+
+    List<TeleplayDO> selectByDate(String insertDate);
 }

@@ -3,6 +3,7 @@ package com.controller;
 import com.VO.CrawlerVo;
 import com.common.util.BizCodeEnum;
 import com.common.util.ResponseUtils;
+import com.domain.TeleplayDO;
 import com.google.common.collect.ImmutableMap;
 import com.service.ICrawlerSearch;
 import com.service.ICrawlerService;
@@ -47,8 +48,29 @@ public class AdminController {
 
     }
 
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
+    @ResponseBody
+    Object detail(@RequestParam(value = "type", required = false) Integer type,ModelMap modelMap) {
+
+        try {
+            List result = searchService.detail(type);
+            return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
+                    .put("result",result)
+                    .build(), BizCodeEnum.SUCCESS.code, "success");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
 
 
+    }
+
+
+    @RequestMapping(value = "/detailPage", method = RequestMethod.GET)
+    public String detailPage() {
+        return "/page/index/detail";
+
+    }
 
 
 }

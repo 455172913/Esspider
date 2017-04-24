@@ -1,6 +1,8 @@
 package com.service.impl;
 
 import com.VO.CrawlerVo;
+import com.dao.TeleplayDOMapper;
+import com.domain.TeleplayDO;
 import com.repository.CrawlerRepository;
 import com.service.ICrawlerSearch;
 import org.elasticsearch.index.query.MatchQueryBuilder;
@@ -8,6 +10,7 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -18,14 +21,17 @@ import java.util.List;
 public class CrawlerSearchService implements ICrawlerSearch{
     @Autowired
     CrawlerRepository crawlerRepository;
+    @Resource
+    TeleplayDOMapper teleplayDOMapper;
 
-    public List<CrawlerVo> findByName(String name) {
+    public List<TeleplayDO> findByName(String name) {
         MatchQueryBuilder matchQueryBuilder = QueryBuilders.matchPhraseQuery("name", name);
-        List<CrawlerVo> crawlerVos = new ArrayList<>();
+        List<TeleplayDO> teleplayDOS = new ArrayList<>();
         for (CrawlerVo book : crawlerRepository.search(matchQueryBuilder)) {
-            crawlerVos.add(book);
+            TeleplayDO teleplayDO = teleplayDOMapper.selectByNameDomain(book.getName(),book.getDomain());
+            teleplayDOS.add(teleplayDO);
         }
-        return crawlerVos;
+        return teleplayDOS;
     }
 
     public List<CrawlerVo> findByType(String type) {

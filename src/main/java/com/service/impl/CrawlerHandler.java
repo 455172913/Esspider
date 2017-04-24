@@ -118,7 +118,7 @@ public class CrawlerHandler {
             teleplayDO.setNumber(i+1);
             teleplayDO.setUpdatedate(DateUtil.format(new Date(),"yyyy-MM-dd"));
             teleplayDO.setUpdatetime(System.currentTimeMillis());
-            TeleplayDO temp = teleplayDOMapper.selectByUrl(youku_play_url);
+            TeleplayDO temp = teleplayDOMapper.selectByNameDomain(youku_name,"youku.com");
             if (temp != null){
                 teleplayDO.setId(temp.getId());
                 teleplayDO.setInsertdate(temp.getInsertdate());
@@ -183,7 +183,7 @@ public class CrawlerHandler {
             teleplayDO.setNumber(i+1);
             teleplayDO.setUpdatedate(DateUtil.format(new Date(),"yyyy-MM-dd"));
             teleplayDO.setUpdatetime(System.currentTimeMillis());
-            TeleplayDO temp = teleplayDOMapper.selectByUrl(souhu_play_url);
+            TeleplayDO temp = teleplayDOMapper.selectByNameDomain(souhu_name,"souhu.com");
             if (temp != null){
                 teleplayDO.setId(temp.getId());
                 teleplayDO.setInsertdate(temp.getInsertdate());
