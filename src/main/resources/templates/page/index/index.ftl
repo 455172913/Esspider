@@ -58,7 +58,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-btn">
-                                <button type="submit" onclick="indexSearch();">Search</button>
+                                <button id="search" type="submit" onclick="indexSearch();">Search</button>
                             </div>
                         </div>
                     </div>
@@ -93,10 +93,15 @@
     function indexSearch() {
         var content = $("#content").val();
         var type = $("#option").val();
-        alert(content);
         window.location.href="/admin/search?type=" + type + "&search_name=" + content;
 
     }
+
+    $("input").keydown(function(){
+        if(event.keyCode==13){
+            indexSearch();
+        }
+    });
 </script>
 
 

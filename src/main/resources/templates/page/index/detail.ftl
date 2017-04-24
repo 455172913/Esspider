@@ -366,5 +366,12 @@
         $(".nav-list").css("display","none");
         $(".nav-list:eq(2)").show();
     })
+
+
+    $("#cx1").keydown(function(){
+        if(event.keyCode==13){
+            $("#cx2").click();
+        }
+    });
 </script>
 </@html>
