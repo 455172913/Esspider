@@ -2,54 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62696aff-b954-494c-9e85-feb1b91e6874" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_4_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/_state/global-19.st" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/_state/state-15.st" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/index/segments_9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-10.ckp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-10.tlog" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-11.ckp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-11.tlog" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-12.ckp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-12.tlog" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-13.ckp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-13.tlog" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-14.ckp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-14.tlog" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-15.ckp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-15.tlog" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-16.ckp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-16.tlog" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-17.ckp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-17.tlog" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-18.ckp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog-18.tlog" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/_state/state-37.st" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog.ckp" afterPath="$PROJECT_DIR$/data/elasticsearch/nodes/0/indices/system/0/translog/translog.ckp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/controller/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/com/controller/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/controller/StudentController.class" afterPath="$PROJECT_DIR$/target/classes/com/controller/StudentController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/dao/LessonDoMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/dao/LessonDoMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/dao/StudentDOMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/dao/StudentDOMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/service/IStudentService.class" afterPath="$PROJECT_DIR$/target/classes/com/service/IStudentService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/service/impl/LoginService.class" afterPath="$PROJECT_DIR$/target/classes/com/service/impl/LoginService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/service/impl/studentService.class" afterPath="$PROJECT_DIR$/target/classes/com/service/impl/studentService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EsSpider.iml" afterPath="$PROJECT_DIR$/EsSpider.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/controller/LessonController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/LessonController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/controller/StudentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/StudentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dao/LessonDoMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/LessonDoMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/service/ILessonService.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/ILessonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/service/ILoginService.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/ILoginService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/LessonService.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/LessonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/LoginService.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/LoginService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/freemarker.properties" afterPath="$PROJECT_DIR$/src/main/resources/freemarker.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/LessonDoMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/LessonDoMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/freemarker.properties" afterPath="$PROJECT_DIR$/target/classes/freemarker.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis/LessonDoMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/LessonDoMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis/StudentDOMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/StudentDOMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,15 +18,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="LessonController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LessonController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/LessonController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="78" column="13" lean-forward="true" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+            <state relative-caret-position="2280">
+              <caret line="78" column="13" lean-forward="false" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3537#3553#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page/student/login.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="553">
+              <caret line="130" column="7" lean-forward="true" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,7 +53,7 @@
       <file leaf-file-name="kechengmanage.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page/student/kechengmanage.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
+            <state relative-caret-position="13320">
               <caret line="444" column="35" lean-forward="false" selection-start-line="444" selection-start-column="27" selection-end-line="444" selection-end-column="35" />
               <folding>
                 <marker date="1493178638983" expanded="true" signature="13616:13631" ph="..." />
@@ -104,7 +66,7 @@
       <file leaf-file-name="chengji.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page/student/chengji.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="973">
+            <state relative-caret-position="2940">
               <caret line="98" column="40" lean-forward="false" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
               <folding />
             </state>
@@ -114,7 +76,7 @@
       <file leaf-file-name="studentmanage.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page/student/studentmanage.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1081">
+            <state relative-caret-position="8280">
               <caret line="276" column="17" lean-forward="false" selection-start-line="276" selection-start-column="17" selection-end-line="276" selection-end-column="17" />
               <folding />
             </state>
@@ -124,8 +86,8 @@
       <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="56" column="17" lean-forward="true" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+            <state relative-caret-position="1200">
+              <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -134,7 +96,7 @@
       <file leaf-file-name="LessonService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/LessonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
+            <state relative-caret-position="1230">
               <caret line="48" column="39" lean-forward="false" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
               <folding />
             </state>
@@ -144,8 +106,8 @@
       <file leaf-file-name="ILessonService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/service/ILessonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+            <state relative-caret-position="810">
+              <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -291,7 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -542,6 +503,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -978,12 +940,13 @@
       <workItem from="1492853005864" duration="4953000" />
       <workItem from="1493045318589" duration="7405000" />
       <workItem from="1493132205674" duration="5369000" />
-      <workItem from="1493173703353" duration="4437000" />
+      <workItem from="1493173703353" duration="4734000" />
+      <workItem from="1493179444672" duration="21000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72188000" />
+    <option name="totallyTimeSpent" value="72506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1001,9 +964,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37032843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37032843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1011,7 +973,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24087983" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24409871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1019,6 +981,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1121,7 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1252,13 +1214,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page/student/login.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1651">
-          <caret line="61" column="17" lean-forward="false" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Bootstrap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1355,23 +1310,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="56" column="17" lean-forward="true" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+        <state relative-caret-position="1200">
+          <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page/student/chengji.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="973">
+        <state relative-caret-position="2940">
           <caret line="98" column="40" lean-forward="false" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
           <folding />
         </state>
@@ -1379,7 +1331,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page/student/studentmanage.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1081">
+        <state relative-caret-position="8280">
           <caret line="276" column="17" lean-forward="false" selection-start-line="276" selection-start-column="17" selection-end-line="276" selection-end-column="17" />
           <folding />
         </state>
@@ -1397,7 +1349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3870">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1405,21 +1356,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/service/ILessonService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+        <state relative-caret-position="810">
+          <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/LessonService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
+        <state relative-caret-position="1230">
           <caret line="48" column="39" lean-forward="false" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
           <folding />
         </state>
@@ -1427,7 +1377,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page/student/kechengmanage.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
+        <state relative-caret-position="13320">
           <caret line="444" column="35" lean-forward="false" selection-start-line="444" selection-start-column="27" selection-end-line="444" selection-end-column="35" />
           <folding>
             <marker date="1493178638983" expanded="true" signature="13616:13631" ph="..." />
@@ -1438,12 +1388,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/LessonController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="78" column="13" lean-forward="true" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+        <state relative-caret-position="2280">
+          <caret line="78" column="13" lean-forward="false" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3537#3553#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/page/student/login.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="130" column="7" lean-forward="true" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
