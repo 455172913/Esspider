@@ -15,11 +15,11 @@
     <legend>个人信息修改</legend>
 </fieldset>
 <form class="layui-form layui-form-pane" action="">
-    <input type="hidden" name="userid" value="">
+    <input type="hidden" name="id" value="" id="userid">
     <div class="layui-form-item">
         <label class="layui-form-label">姓名</label>
         <div class="layui-input-inline">
-            <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+            <input type="text" name="teacherName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
@@ -32,7 +32,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">确认密码</label>
         <div class="layui-input-inline">
-            <input type="password" name="password" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            <input type="password" name="password2" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
         </div>
         <div class="layui-form-mid layui-word-aux">请与填写密码保持一致</div>
     </div>
@@ -78,8 +78,21 @@
 
         //监听提交
         form.on('submit(demo1)', function(data){
-            layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
+            var msg  = data.field;
+            if(msg.password!=msg.password2){
+                layer.alert("两次输入的密码不一致！");
+                return false;
+            }
+//            layer.alert(JSON.stringify(data.field), {
+//                title: '最终的提交信息'
+//            })
+            $.ajax({
+                url:"/login/update",
+                type:"get",
+                data:msg,
+                success:function(da){
+                    layer.alert("修改成功！");
+                }
             })
             return false;
         });

@@ -4,6 +4,7 @@ import com.dao.TeacherDOMapper;
 import com.domain.LessonDo;
 import com.domain.TeacherDO;
 import com.service.ILoginService;
+import org.eclipse.jetty.util.StringUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -24,24 +25,32 @@ public class LoginService implements ILoginService{
     }
 
     @Override
-    public int insertTeacher(String username, String password, String teacherName){
+    public int insertTeacher(String username, String password, String teacherName,Integer root){
         TeacherDO teacherDO = new TeacherDO();
         teacherDO.setUsername(username);
         teacherDO.setPassword(password);
         teacherDO.setTeachername(teacherName);
-        teacherDO.setRoot(false);
+        if (root == 1){
+            teacherDO.setRoot(true);
+        }else {
+            teacherDO.setRoot(false);
+        }
         return teacherDOMapper.insert(teacherDO);
     }
 
     @Override
-    public int updateTeacher(Integer id, String username, String password, String teacherName) {
+    public int updateTeacher(Integer id, String username, String password, String teacherName,String root) {
         TeacherDO teacherDO = new TeacherDO();
         teacherDO.setId(id);
-        teacherDO.setRoot(false);
         teacherDO.setUsername(username);
         teacherDO.setPassword(password);
         teacherDO.setTeachername(teacherName);
-        return teacherDOMapper.updateByPrimaryKey(teacherDO);
+        if (root != null && "1".equals(root)){
+            teacherDO.setRoot(true);
+        }else {
+            teacherDO.setRoot(false);
+        }
+        return teacherDOMapper.updateByPrimaryKeySelective(teacherDO);
 
     }
 
@@ -50,5 +59,13 @@ public class LoginService implements ILoginService{
         return teacherDOMapper.deleteByPrimaryKey(id);
     }
 
+    @Override
+    public List<TeacherDO> selectAllTeacher() {
+        return teacherDOMapper.selectAllTeacher();
+    }
 
+    @Override
+    public List<TeacherDO> selectTeacherByName(String name) {
+        return teacherDOMapper.selectTeacherByName(name);
+    }
 }

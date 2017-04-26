@@ -11,10 +11,14 @@ import java.util.List;
 public interface ILoginService {
     TeacherDO isTeacher(String username , String password);
 
-    int insertTeacher(String username, String password, String teacherName);
+    int insertTeacher(String username, String password, String teacherName,Integer root);
 
-    int updateTeacher(Integer id,String username,String password,String teacherName);
+    int updateTeacher(Integer id,String username,String password,String teacherName,String root);
 
     int deleteTeacher(Integer id);
+
+    List<TeacherDO> selectAllTeacher();
+
+    List<TeacherDO> selectTeacherByName(String name);
 
 }

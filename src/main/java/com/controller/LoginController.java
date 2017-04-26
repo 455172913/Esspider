@@ -6,15 +6,13 @@ import com.domain.TeacherDO;
 import com.google.common.collect.ImmutableMap;
 import com.service.ILoginService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * Created by rong on 2017/4/16.
@@ -95,6 +93,7 @@ public class LoginController {
             Cookie cookie_userId = new Cookie("userId", String.valueOf(result.getId()));
             cookie_name.setPath("/");
             cookie_userId.setPath("/");
+            cookie_root.setPath("/");
             httpServletResponse.addCookie(cookie_name);
             httpServletResponse.addCookie(cookie_username);
             httpServletResponse.addCookie(cookie_root);
@@ -109,10 +108,11 @@ public class LoginController {
     @ResponseBody
     Object insert(@RequestParam(value = "username", required = true) String username,
                   @RequestParam(value = "password", required = true) String password,
-                  @RequestParam(value = "teacherName", required = true) String teacherName) {
+                  @RequestParam(value = "teacherName", required = true) String teacherName,
+                  @RequestParam(value = "root", required = true) Integer root) {
         int result = 0;
         try {
-            result = loginService.insertTeacher(username,password,teacherName);
+            result = loginService.insertTeacher(username,password,teacherName,root);
             return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
                     .put("result",result)
                     .build(), BizCodeEnum.SUCCESS.code, "success");
@@ -127,12 +127,13 @@ public class LoginController {
     @RequestMapping(value = "/update", method = RequestMethod.GET)
     @ResponseBody
     Object update(@RequestParam(value = "id", required = true) Integer id,
-                  @RequestParam(value = "username", required = true) String username,
+                  @RequestParam(value = "username", required = false) String username,
                   @RequestParam(value = "password", required = true) String password,
-                  @RequestParam(value = "teacherName", required = true) String teacherName) {
+                  @RequestParam(value = "teacherName", required = true) String teacherName,
+                  @RequestParam(value = "root", required = false) String root) {
         int result = 0;
         try {
-            result = loginService.updateTeacher(id,username,password,teacherName);
+            result = loginService.updateTeacher(id,username,password,teacherName,root);
             return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
                     .put("result",result)
                     .build(), BizCodeEnum.SUCCESS.code, "success");
@@ -158,4 +159,37 @@ public class LoginController {
         return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
 
     }
+
+    @RequestMapping(value = "/selectAllTeacher", method = RequestMethod.GET)
+    @ResponseBody
+    Object selectAllTeacher() {
+        List<TeacherDO> result ;
+        try {
+            result = loginService.selectAllTeacher();
+            return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
+                    .put("result",result)
+                    .build(), BizCodeEnum.SUCCESS.code, "success");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
+
+    }
+
+    @RequestMapping(value = "/selectTeacherByName", method = RequestMethod.GET)
+    @ResponseBody
+    Object selectTeacherByName(@RequestParam(value = "teacherName", required = true) String teacherName) {
+        List<TeacherDO> result ;
+        try {
+            result = loginService.selectTeacherByName(teacherName);
+            return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
+                    .put("result",result)
+                    .build(), BizCodeEnum.SUCCESS.code, "success");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
+
+    }
+
 }

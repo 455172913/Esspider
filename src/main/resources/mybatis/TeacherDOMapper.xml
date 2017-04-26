@@ -17,6 +17,18 @@
     from teacher
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectTeacherByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from teacher
+    where teacherName = #{name,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAllTeacher"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from teacher
+  </select>
   <select id="selectByUserPwd" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
