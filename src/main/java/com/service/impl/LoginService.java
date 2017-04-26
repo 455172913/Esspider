@@ -1,11 +1,13 @@
 package com.service.impl;
 
 import com.dao.TeacherDOMapper;
+import com.domain.LessonDo;
 import com.domain.TeacherDO;
 import com.service.ILoginService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by rong on 2017/4/16.
@@ -47,4 +49,6 @@ public class LoginService implements ILoginService{
     public int deleteTeacher(Integer id) {
         return teacherDOMapper.deleteByPrimaryKey(id);
     }
+
+
 }

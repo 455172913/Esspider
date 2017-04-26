@@ -23,12 +23,25 @@
     teachPro
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
-    ,
+    select
+    <include refid="Base_Column_List" />,
     <include refid="Blob_Column_List" />
     from lesson
     where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByTeacherId" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />,
+    <include refid="Blob_Column_List" />
+    from lesson
+    where teacherId = #{userId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByLessonName" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />,
+    <include refid="Blob_Column_List" />
+    from lesson
+    where lessonName = #{name,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from lesson

@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
  * Created by rong on 2017/4/16.
  */
 @Controller
+@RequestMapping(value = "/student")
 public class StudentController {
 
 

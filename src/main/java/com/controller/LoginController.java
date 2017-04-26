@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by rong on 2017/4/16.
@@ -23,26 +26,82 @@ public class LoginController {
     @Resource
     ILoginService loginService;
 
+    @RequestMapping(value = "/loginPage", method = RequestMethod.GET)
+    public String index() {
+        return "/page/student/login";
+    }
+
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String home() {
+        return "/page/student/home";
+    }
+
+    @RequestMapping(value = "/chengji", method = RequestMethod.GET)
+    public String chengji() {
+        return "/page/student/chengji";
+    }
+
+    @RequestMapping(value = "/chuqin", method = RequestMethod.GET)
+    public String chuqin() {
+        return "/page/student/chuqin";
+    }
+
+    @RequestMapping(value = "/kechengmanage", method = RequestMethod.GET)
+    public String kechengmanage() {
+        return "/page/student/kechengmanage";
+    }
+
+    @RequestMapping(value = "/studentmanage", method = RequestMethod.GET)
+    public String studentmanage() {
+        return "/page/student/studentmanage";
+    }
+
+    @RequestMapping(value = "/teachermanage", method = RequestMethod.GET)
+    public String teachermanage() {
+        return "/page/student/teachermanage";
+    }
+
+    @RequestMapping(value = "/xiaoli", method = RequestMethod.GET)
+    public String xiaoli() {
+        return "/page/student/xiaoli";
+    }
+
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public String user() {
+        return "/page/student/user";
+    }
+
+
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @ResponseBody
     public String helloWorld() {
         return "hello";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    @ResponseBody
-    Object login(@RequestParam(value = "username", required = true) String username,@RequestParam(value = "password", required = true) String password) {
-        TeacherDO result = null;
-        try {
-            result = loginService.isTeacher(username,password);
-            return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
-                    .put("result",result)
-                    .build(), BizCodeEnum.SUCCESS.code, "success");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
 
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    Object login(@RequestParam(value = "username", required = true) String username,
+                 @RequestParam(value = "password", required = true) String password,
+                 HttpServletResponse httpServletResponse) {
+        TeacherDO result = null;
+        result = loginService.isTeacher(username,password);
+        if (result == null){
+            return "/page/student/login";
+        }else {
+            Cookie cookie_name = new Cookie("name", result.getTeachername());
+            Cookie cookie_username = new Cookie("username", result.getUsername());
+            Cookie cookie_root = new Cookie("root", result.getUsername());
+            Cookie cookie_userId = new Cookie("userId", String.valueOf(result.getId()));
+            cookie_name.setPath("/");
+            cookie_userId.setPath("/");
+            httpServletResponse.addCookie(cookie_name);
+            httpServletResponse.addCookie(cookie_username);
+            httpServletResponse.addCookie(cookie_root);
+            httpServletResponse.addCookie(cookie_userId);
+            return "/page/student/index";
+
+        }
     }
 
 
