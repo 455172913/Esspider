@@ -39,11 +39,10 @@ public class StudentController {
     Object insert(@RequestParam(value = "studentName", required = true) String studentName,
                   @RequestParam(value = "studentNumber", required = true) String studentNumber,
                   @RequestParam(value = "className", required = true) String className,
-                  @RequestParam(value = "lessonId", required = true) Integer lessonId,
-                  @RequestParam(value = "lessonName", required = true) String lessonName) {
+                  @RequestParam(value = "lessonId", required = true) Integer lessonId) {
         int result = 0;
         try {
-            result = studentService.insertStudent(studentName,studentNumber,className,lessonId,lessonName);
+            result = studentService.insertStudent(studentName,studentNumber,className,lessonId);
             return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
                     .put("result",result)
                     .build(), BizCodeEnum.SUCCESS.code, "success");
@@ -134,13 +133,14 @@ public class StudentController {
         return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
     }
 
-    @RequestMapping(value = "/addUsualScore", method = RequestMethod.GET)
+    @RequestMapping(value = "/addScore", method = RequestMethod.GET)
     @ResponseBody
-    Object addUsualScore(@RequestParam(value = "studentId", required = false) Integer studentId,
-                         @RequestParam(value = "usualScore", required = false) Integer usualScore) {
+    Object addScore(@RequestParam(value = "studentId", required = true) Integer studentId,
+                    @RequestParam(value = "usualScore", required = true) Integer usualScore,
+                    @RequestParam(value = "examScore", required = true) Integer examScore) {
         int result = 0;
         try {
-            result = studentService.addUsualScoer(studentId,usualScore);
+            result = studentService.addUsualScoer(studentId,usualScore,examScore);
             return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
                     .put("result",result)
                     .build(), BizCodeEnum.SUCCESS.code, "success");
@@ -150,20 +150,5 @@ public class StudentController {
         return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
     }
 
-    @RequestMapping(value = "/addExamScore", method = RequestMethod.GET)
-    @ResponseBody
-    Object addExamScore(@RequestParam(value = "studentId", required = true) Integer studentId,
-                        @RequestParam(value = "examScore", required = false) Integer examScore) {
-        int result = 0;
-        try {
-            result = studentService.addExamScore(studentId,examScore);
-            return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
-                    .put("result",result)
-                    .build(), BizCodeEnum.SUCCESS.code, "success");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
-    }
 
 }

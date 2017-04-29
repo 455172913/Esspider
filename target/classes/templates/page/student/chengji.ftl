@@ -11,93 +11,98 @@
 </head>
 <body>
 <div style="height:10px;"></div>
-<form class="layui-form" action="">
+<form class="layui-form" action="" style="padding-bottom: 10px;">
     <div class="layui-inline">
-        <label class="layui-form-label">搜索选择框</label>
+        <label class="layui-form-label">课程选择</label>
         <div class="layui-input-inline">
-            <select name="modules" lay-verify="required" lay-search="">
-                <option value="">直接选择或搜索选择</option>
-                <option value="1">layer</option>
-                <option value="2">form</option>
-                <option value="3">layim</option>
-                <option value="4">element</option>
-                <option value="5">laytpl</option>
-                <option value="6">upload</option>
-                <option value="7">laydate</option>
-                <option value="8">laypage</option>
-                <option value="9">flow</option>
-                <option value="10">util</option>
-                <option value="11">code</option>
-                <option value="12">tree</option>
-                <option value="13">layedit</option>
-                <option value="14">nav</option>
-                <option value="15">tab</option>
-                <option value="16">table</option>
-                <option value="17">select</option>
-                <option value="18">checkbox</option>
-                <option value="19">switch</option>
-                <option value="20">radio</option>
+            <select name="lessonId" lay-verify="required" lay-search="" id="sou">
+            <#--<option value="">直接选择或搜索选择</option>-->
+                <#--<option value="1">layer</option>-->
             </select>
         </div>
     </div>
-    <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+    <button class="layui-btn" lay-submit="" lay-filter="demo3">立即提交</button>
 </form>
 
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-    <legend>行边框表格</legend>
+    <legend>学生列表</legend>
 </fieldset>
 
 <table class="layui-table" lay-skin="line">
     <colgroup>
-        <col width="150">
-        <col width="150">
         <col width="200">
-        <col>
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
     </colgroup>
     <thead>
     <tr>
-        <th>人物</th>
-        <th>民族</th>
-        <th>出场时间</th>
-        <th>格言</th>
+        <th>姓名</th>
+        <th>学号</th>
+        <th>实到次数/应到次数</th>
+        <th>平时分</th>
+        <th>成绩</th>
     </tr>
     </thead>
-    <tbody>
-    <tr>
-        <td>贤心</td>
-        <td>汉族</td>
-        <td>1989-10-14</td>
-        <td>人生似修行</td>
-    </tr>
-    <tr>
-        <td>张爱玲</td>
-        <td>汉族</td>
-        <td>1920-09-30</td>
-        <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
-    </tr>
-    <tr>
-        <td>Helen Keller</td>
-        <td>拉丁美裔</td>
-        <td>1880-06-27</td>
-        <td> Life is either a daring adventure or nothing.</td>
-    </tr>
-    <tr>
-        <td>岳飞</td>
-        <td>汉族</td>
-        <td>1103-北宋崇宁二年</td>
-        <td>教科书再滥改，也抹不去“民族英雄”的事实</td>
-    </tr>
-    <tr>
-        <td>孟子</td>
-        <td>华夏族（汉族）</td>
-        <td>公元前-372年</td>
-        <td>猿强，则国强。国强，则猿更强！ </td>
-    </tr>
+    <tbody id="content1">
+    <#--<tr>-->
+        <#--<td>贤心</td>-->
+        <#--<td>汉族</td>-->
+        <#--<td></td>-->
+        <#--<td>人生似修行</td>-->
+    <#--</tr>-->
     </tbody>
 </table>
-<button class="layui-btn" style="padding:0 32px;">提交</button>
+<button class="layui-btn" style="padding:0 32px;" id="tijiao">提交</button>
 <script type="text/javascript" src="/css/common/js/jquery-3.1.1.min.js"></script>
 <script src="/css/common/layui/layui.js"></script>
+<script>
+    var arr=[];
+    function kcc(){
+        $.ajax({
+            url:"/lesson/selectByTeacherId",
+            type:"get",
+            success:function(data){
+                console.log(data);
+                $("#sou").empty();
+                $("#sou").append('<option value="">直接选择或搜索选择</option>');
+                for(i=0;i<data.data.result.length;i++){
+                    $("#sou").append('<option value="'+data.data.result[i].id+'">'+data.data.result[i].lessonname+'</option>');
+                    var tt = parseInt(data.data.result[i].id);
+                    arr[tt]=data.data.result[i].callcount;
+                }
+                console.log(arr);
+            }
+        })
+    }
+    kcc();
+    //提交
+    var num = 0;
+    function tijiao(id,usualScore,examScore,all){
+        $.ajax({
+            url:"/student/addScore",
+            type:"get",
+            data:{"studentId":id,"usualScore":usualScore,"examScore":examScore},
+            success:function(data){
+                num++;
+                if(num==all){
+                    alert("提交成功！");
+                    window.location.reload();
+                }
+            }
+        })
+    }
+    $("#tijiao").click(function(){
+        var all = $("#content1 tr").length;
+        for(i=0;i<all;i++){
+            var id = $("#content1 tr:eq("+i+")").attr("oid");
+            var usualScore = $(".stuu"+id).val();
+            var examScore = $(".stue"+id).val();
+            tijiao(id,usualScore,examScore,all);
+        }
+    })
+</script>
 <script>
     layui.use(['form', 'layedit', 'laydate'], function(){
         var form = layui.form()
@@ -133,6 +138,27 @@
         form.on('submit(demo1)', function(data){
             layer.alert(JSON.stringify(data.field), {
                 title: '最终的提交信息'
+            })
+            return false;
+        });
+        form.on('submit(demo3)', function(data){
+//            layer.alert(JSON.stringify(data.field), {
+//                title: '最终的提交信息'
+//            })
+//            console.log(data.field.lessonId);
+            lessonId = data.field.lessonId;
+            var count = arr[lessonId];
+            $.ajax({
+                url:"/student/selectByLesson",
+                type:"get",
+                data:data.field,
+                success:function(data){
+                    console.log(data);
+                    $("#content1").empty();
+                    for(i=0;i<data.data.result.length;i++){
+                       $("#content1").append('<tr oid="'+data.data.result[i].id+'"><td>'+data.data.result[i].studentname+'</td><td>'+data.data.result[i].studentnumber+'</td><td>'+data.data.result[i].attendcount+'/'+count+'</td><td><input class="layui-input stuu'+data.data.result[i].id+'" type="text" name="usualScore" value="'+data.data.result[i].usualscore+'" placeholder="0"></td><td><input class="layui-input stue'+data.data.result[i].id+'" type="text" name="examScore" value="'+data.data.result[i].examscore+'" placeholder="0"></td> </tr>');
+                    }
+                }
             })
             return false;
         });

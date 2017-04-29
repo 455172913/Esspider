@@ -8,8 +8,7 @@ import java.util.List;
  * Created by rong on 2017/4/16.
  */
 public interface IStudentService {
-    int insertStudent(String studentName, String studentNumber, String className, Integer lessonId,
-                            String lessonName);
+    int insertStudent(String studentName, String studentNumber, String className, Integer lessonId);
 
     StudentDO selectById(Integer studentId);
 
@@ -21,7 +20,6 @@ public interface IStudentService {
 
     int addAttendCount(List<Integer> studentIds,Integer lessonId);
 
-    int addUsualScoer(Integer sutdentId,Integer usualScoer);
+    int addUsualScoer(Integer sutdentId,Integer usualScoer,Integer examScoer);
 
-    int addExamScore(Integer sutdentId,Integer examScoer);
 }

@@ -64,6 +64,7 @@ public class LessonService implements ILessonService {
         LessonDo result = new LessonDo();
         result.setId(lessonId);
         result.setCallcount(new String().valueOf(Integer.parseInt(temp.getCallcount())+1));
+        lessonDoMapper.updateByPrimaryKeySelective(result);
         return 0;
     }
 

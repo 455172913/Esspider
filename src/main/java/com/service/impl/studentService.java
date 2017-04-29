@@ -1,6 +1,8 @@
 package com.service.impl;
 
+import com.dao.LessonDoMapper;
 import com.dao.StudentDOMapper;
+import com.domain.LessonDo;
 import com.domain.StudentDO;
 import com.service.ILessonService;
 import com.service.IStudentService;
@@ -21,16 +23,23 @@ public class studentService implements IStudentService{
     @Resource
     ILessonService lessonService;
 
+    @Resource
+    LessonDoMapper lessonDoMapper;
+
 
     @Override
-    public int insertStudent(String studentName, String studentNumber, String className, Integer lessonId, String lessonName) {
+    public int insertStudent(String studentName, String studentNumber, String className, Integer lessonId) {
+        LessonDo lessonDo = lessonDoMapper.selectByPrimaryKey(lessonId);
         StudentDO studentDO = new StudentDO();
         studentDO.setAttendcount(0);
         studentDO.setClassname(className);
         studentDO.setLessonid(lessonId);
-        studentDO.setLessonname(lessonName);
         studentDO.setStudentname(studentName);
+        studentDO.setUsualscore(0);
+        studentDO.setExamscore(0);
+        studentDO.setFinalscore(0);
         studentDO.setStudentnumber(studentNumber);
+        studentDO.setLessonname(lessonDo.getLessonname());
         return studentDOMapper.insert(studentDO);
     }
 
@@ -82,20 +91,14 @@ public class studentService implements IStudentService{
     }
 
     @Override
-    public int addUsualScoer(Integer sutdentId, Integer usualScoer) {
+    public int addUsualScoer(Integer sutdentId, Integer usualScoer,Integer examScore) {
         StudentDO studentDO = new StudentDO();
         studentDO.setId(sutdentId);
         studentDO.setUsualscore(usualScoer);
+        studentDO.setExamscore(examScore);
+        studentDO.setFinalscore(usualScoer+examScore);
+
         return  studentDOMapper.updateByPrimaryKeySelective(studentDO);
     }
 
-    @Override
-    public int addExamScore(Integer sutdentId, Integer examScoer) {
-        StudentDO temp = studentDOMapper.selectByPrimaryKey(sutdentId);
-        StudentDO result = new StudentDO();
-        result.setId(temp.getId());
-        result.setExamscore(examScoer);
-        result.setFinalscore(examScoer + temp.getUsualscore());
-        return studentDOMapper.updateByPrimaryKeySelective(result);
-    }
 }

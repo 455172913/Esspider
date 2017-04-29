@@ -7,7 +7,7 @@
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <title>学生管理</title>
+    <title>学生信息管理</title>
     <link rel="stylesheet" href="/css/common/layui/css/layui.css">
 </head>
 <body>
@@ -15,157 +15,84 @@
 <div class="layui-tab layui-tab-card">
     <ul class="layui-tab-title">
         <li class="layui-this">学生列表</li>
-        <li>添加学生信息</li>
-        <li>修改学生信息</li>
+        <li>学生信息添加</li>
+        <li>学生信息修改</li>
     </ul>
     <div class="layui-tab-content">
         <div class="layui-tab-item layui-show">
-            <button class="layui-btn" style="padding:0 32px;">搜索</button>
-            <div class="layui-input-block" style="margin:-38px 0 0 95px;"><input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入课程名称" class="layui-input"></div>
+            <form class="layui-form" action="" style="padding-bottom: 10px;">
+                <div class="layui-inline">
+                    <label class="layui-form-label">课程选择</label>
+                    <div class="layui-input-inline">
+                        <select name="lessonId" lay-verify="required" lay-search="" id="sou">
+                        <#--<option value="">直接选择或搜索选择</option>-->
+                <#--<option value="1">layer</option>-->
+                        </select>
+                    </div>
+                </div>
+                <button class="layui-btn" lay-submit="" lay-filter="demo3">立即提交</button>
+            </form>
             <div class="layui-form">
                 <table class="layui-table">
                     <colgroup>
                         <col width="50">
-                        <col width="150">
-                        <col width="150">
                         <col width="200">
-                        <col>
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
                     </colgroup>
                     <thead>
                     <tr>
                         <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>
-                        <th>人物</th>
-                        <th>民族</th>
-                        <th>出场时间</th>
-                        <th>格言</th>
+                        <th>姓名</th>
+                        <th>班级</th>
+                        <th>学号</th>
+                        <th>所选课程</th>
+                        <th></th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td><input type="checkbox" name="" lay-skin="primary"></td>
-                        <td>贤心</td>
-                        <td>汉族</td>
-                        <td>1989-10-14</td>
-                        <td>人生似修行</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="" lay-skin="primary"></td>
-                        <td>张爱玲</td>
-                        <td>汉族</td>
-                        <td>1920-09-30</td>
-                        <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="" lay-skin="primary"></td>
-                        <td>Helen Keller</td>
-                        <td>拉丁美裔</td>
-                        <td>1880-06-27</td>
-                        <td> Life is either a daring adventure or nothing.</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="" lay-skin="primary"></td>
-                        <td>岳飞</td>
-                        <td>汉族</td>
-                        <td>1103-北宋崇宁二年</td>
-                        <td>教科书再滥改，也抹不去“民族英雄”的事实</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="" lay-skin="primary"></td>
-                        <td>孟子</td>
-                        <td>华夏族（汉族）</td>
-                        <td>公元前-372年</td>
-                        <td>猿强，则国强。国强，则猿更强！ </td>
-                    </tr>
+                    <tbody id="content1">
+                    <#--<tr>-->
+                        <#--<td><input type="checkbox" name="" lay-skin="primary"></td>-->
+                        <#--<td>贤心</td>-->
+                        <#--<td>汉族</td>-->
+                        <#--<td>1989-10-14</td>-->
+                        <#--<td>人生似修行</td>-->
+                    <#--</tr>-->
                     </tbody>
                 </table>
             </div>
-            <button class="layui-btn" style="padding:0 32px;">删除</button>
+            <button class="layui-btn" style="padding:0 32px;" id="delkc">删除</button>
         </div>
         <div class="layui-tab-item">
-            <form class="layui-form" action="">
+            <form class="layui-form layui-form-pane" action="">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">课程名称</label>
+                    <label class="layui-form-label">姓名</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="请输入名称" class="layui-input">
+                        <input type="text" name="studentName" lay-verify="required" autocomplete="off" placeholder="请输入名称" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">任课教师</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">开课时间</label>
-                    <div class="layui-input-inline">
-                        <select name="quiz1" lay-verify="required">
-                            <option value="">开始周数</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                        </select>
-                    </div>
-                    <div class="layui-input-inline">
-                        <select name="quiz2" lay-verify="required">
-                            <option value="">结束周数</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                        </select>
-                    </div>
-                    <div class="layui-input-inline">
-                        <select name="quiz3" lay-verify="required">
-                            <option value="">星期</option>
-                            <option value="1">一</option>
-                            <option value="2">二</option>
-                            <option value="3">三</option>
-                            <option value="4">四</option>
-                            <option value="5">五</option>
-                            <option value="6">六</option>
-                            <option value="7">日</option>
-                        </select>
-                    </div>
-                    <div class="layui-input-inline">
-                        <select name="quiz4" lay-verify="required">
-                            <option value="">节数</option>
-                            <option value="1">1-2</option>
-                            <option value="2">3-4</option>
-                            <option value="3">5-6</option>
-                            <option value="4">7-8</option>
-                            <option value="5">9-12</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">教学大纲</label>
+                    <label class="layui-form-label">学号</label>
                     <div class="layui-input-block">
-                        <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+                        <input type="text" name="studentNumber" lay-verify="required" autocomplete="off" placeholder="请输入名称" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">班级</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="className" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所选课程</label>
+                    <div class="layui-input-inline">
+                        <select name="lessonId" id="sel1">
+                            <option value="">请选择权限</option>
+                            <#--<option value="1">管理员</option>-->
+                            <#--<option value="0">普通用户</option>-->
+                        </select>
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -177,95 +104,30 @@
             </form>
         </div>
         <div class="layui-tab-item">
-            <form class="layui-form" action="">
+            <form class="layui-form layui-form-pane" action="">
+                <input type="hidden" name="studentId" id="tcid">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">课程名称</label>
+                    <label class="layui-form-label">姓名</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="请输入名称" class="layui-input">
+                        <input type="text" name="studentName" id="stuname" lay-verify="required" autocomplete="off" placeholder="请输入名称" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">任课教师</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">开课时间</label>
-                    <div class="layui-input-inline">
-                        <select name="quiz1" lay-verify="required">
-                            <option value="">开始周数</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                        </select>
-                    </div>
-                    <div class="layui-input-inline">
-                        <select name="quiz2" lay-verify="required">
-                            <option value="">结束周数</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                        </select>
-                    </div>
-                    <div class="layui-input-inline">
-                        <select name="quiz3" lay-verify="required">
-                            <option value="">星期</option>
-                            <option value="1">一</option>
-                            <option value="2">二</option>
-                            <option value="3">三</option>
-                            <option value="4">四</option>
-                            <option value="5">五</option>
-                            <option value="6">六</option>
-                            <option value="7">日</option>
-                        </select>
-                    </div>
-                    <div class="layui-input-inline">
-                        <select name="quiz4" lay-verify="required">
-                            <option value="">节数</option>
-                            <option value="1">1-2</option>
-                            <option value="2">3-4</option>
-                            <option value="3">5-6</option>
-                            <option value="4">7-8</option>
-                            <option value="5">9-12</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">教学大纲</label>
+                    <label class="layui-form-label">学号</label>
                     <div class="layui-input-block">
-                        <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor2"></textarea>
+                        <input type="text" name="studentNumber" id="stunum" lay-verify="required" autocomplete="off" placeholder="请输入名称" class="layui-input">
                     </div>
                 </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">班级</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="className" id="claname" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                        <button class="layui-btn" lay-submit="" lay-filter="demo2">立即提交</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
                 </div>
@@ -275,6 +137,90 @@
 </div>
 <script type="text/javascript" src="/css/common/js/jquery-3.1.1.min.js"></script>
 <script src="/css/common/layui/layui.js"></script>
+<script>
+    function kcc(){
+        $.ajax({
+            url:"/lesson/selectByTeacherId",
+            type:"get",
+            success:function(data){
+                console.log(data);
+                $("#sou").empty();
+                $("#sou").append('<option value="">直接选择或搜索选择</option>');
+                for(i=0;i<data.data.result.length;i++){
+                    $("#sou").append('<option value="'+data.data.result[i].id+'">'+data.data.result[i].lessonname+'</option>');
+                }
+                $("#sel1").empty();
+                $("#sel1").append('<option value="">请选择课程</option>');
+                for(i=0;i<data.data.result.length;i++){
+                    $("#sel1").append('<option value="'+data.data.result[i].id+'">'+data.data.result[i].lessonname+'</option>');
+                }
+            }
+        })
+    }
+    kcc();
+    //删除
+    function delkc() {
+        var index = $("#content1 .layui-form-checked").length;
+        var tt = 0;
+        for(i=0;i<index;i++){
+            var id = $("#content1 .layui-form-checked:eq("+i+")").prev("input").attr("name");
+//            alert(id);
+            $.ajax({
+                url:"/student/delete",
+                type:"get",
+                data:{"studentId":id},
+                success:function(data){
+                    tt++;
+                    if(tt==index){
+                        alert("删除成功");
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    }
+    $("#delkc").click(function(){
+        delkc();
+    })
+    //查询
+    function kccx(name){
+        $.ajax({
+            url:"",
+            type:"get",
+            data:{"":name},
+            success:function(data){
+                console.log(data);
+//                alert(data.data.result[0].lessonname);
+                $("#content1").empty();
+                for(i=0;i<data.data.result.length;i++){
+                    $("#content1").append('');
+                }
+            }
+        })
+    }
+    $("#kccx").click(function(){
+        var name = $("#kccxbox").val();
+        if(name==""||name ==null){
+            alert("您还未输入内容");
+            return false;
+        }
+        kccx(name);
+    })
+    $("#kccxbox").keydown(function(){
+        if(event.keyCode==13){
+            $("#kccx").click();
+        }
+    })
+    //修改
+    $("#content1").on("click",".bj",function(){
+        $("#tcid").val($(this).attr("oid"));
+        $("#stuname").val($(this).attr("stuname"));
+        $("#claname").val($(this).attr("claname"));
+        $("#stunum").val($(this).attr("stunum"));
+        $("#lesid").val($(this).attr("lesid"));
+        $(".layui-tab li:eq(2)").click();
+    })
+</script>
 <script>
     layui.use('form', function(){
         var $ = layui.jquery, form = layui.form();
@@ -361,8 +307,55 @@
 
         //监听提交
         form.on('submit(demo1)', function(data){
-            layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
+            var studentname = $("input[name=studentName]:eq(0)").val();
+            var classname = $("input[name=className]:eq(0)").val();
+            var studentnum = $("input[name=studentNumber]:eq(0)").val();
+            var lessonid = $("#sel1").val();
+            $.ajax({
+                url:"/student/insert",
+                type:"get",
+                data:{"studentName":studentname,"className":classname,"studentNumber":studentnum,"lessonId":lessonid},
+                success:function(da){
+                    layer.alert("添加成功");
+                    window.location.reload();
+                }
+            })
+            return false;
+        });
+        form.on('submit(demo2)', function(data){
+            var studentid = $("#tcid").val();
+            var studentname = $("#stuname").val();
+            var classname = $("#claname").val();
+            var studentnum = $("#stunum").val();
+            var lessonid = $("#lesid").val();
+            $.ajax({
+                url:"/student/updateStudentInfo",
+                type:"get",
+                data:{"studentId":studentid,"studentName":studentname,"className":classname,"studentNumber":studentnum,"lessonId":lessonid},
+                success:function(da){
+                    layer.alert("修改成功");
+                    window.location.reload();
+                }
+            })
+            return false;
+        });
+        form.on('submit(demo3)', function(data){
+//            layer.alert(JSON.stringify(data.field), {
+//                title: '最终的提交信息'
+//            })
+//            console.log(data.field.lessonId);
+            lessonId = data.field.lessonId;
+            $.ajax({
+                url:"/student/selectByLesson",
+                type:"get",
+                data:data.field,
+                success:function(data){
+                    console.log(data);
+                    $("#content1").empty();
+                    for(i=0;i<data.data.result.length;i++){
+                        $("#content1").append('<tr><td><input type="checkbox" name="'+data.data.result[i].id+'" lay-skin="primary"></td><td>'+data.data.result[i].studentname+'</td><td>'+data.data.result[i].classname+'</td><td>'+data.data.result[i].studentnumber+'</td><td>'+data.data.result[i].lessonname+'</td><td><button class="layui-btn bj" oid="'+data.data.result[i].id+'" stuname="'+data.data.result[i].studentname+'" claname="'+data.data.result[i].classname+'" stunum="'+data.data.result[i].studentnumber+'" lesid="'+data.data.result[i].lessonid+'" style="padding:0 32px;">编辑</button></td></tr>');
+                    }
+                }
             })
             return false;
         });
