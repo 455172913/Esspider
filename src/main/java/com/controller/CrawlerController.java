@@ -9,6 +9,7 @@ import com.service.ICrawlerSearch;
 import com.service.ICrawlerService;
 import com.service.impl.DBToSearch;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by rong on 2017/4/4.
@@ -53,6 +55,13 @@ public class CrawlerController {
             e.printStackTrace();
         }
         return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
+
+    }
+
+    @RequestMapping(value = "/detailCrawler", method = RequestMethod.GET)
+    public String search() {
+        boolean result = crawlerService.crawler();
+        return "/page/index/detail";
 
     }
 

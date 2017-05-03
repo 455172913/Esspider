@@ -192,6 +192,7 @@
             <div class="logo"><a  href="/admin/index"><span style="color:red;">影视</span>爬虫 </a></div>
             <ul class="mynav">
                 <li><a href="/admin/detailPage" class="active">日常采集结果</a></li>
+                <li><a href="/crawler/detailCrawler" class="active">进行日常采集</a></li>
 
             </ul>
         </div>
