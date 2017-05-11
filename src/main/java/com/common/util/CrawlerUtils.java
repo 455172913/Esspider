@@ -68,20 +68,15 @@ public class CrawlerUtils {
 		webClient.getOptions().setJavaScriptEnabled(false);
 		webClient.getOptions().setCssEnabled(false);
 		webClient.getOptions().setAppletEnabled(false);
-		
-		
 //		webClient.addRequestHeader("X-Requested-With", "XMLHttpRequest");
-	
-	
 		webClient.setRefreshHandler(new RefreshHandler() {
-
 			@Override
 			public void handleRefresh(Page page, URL url, int seconds) throws IOException {
 
 			}
 		});
-		webClient.addRequestHeader("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13");
-	//    webClient.addRequestHeader("Referer", "https://dianying.taobao.com/showDetail.htm?spm=a1z21.6646273.w2.3.BapRNR&showId=35237&n_s=new&source=current");
+		webClient.addRequestHeader("User-Agent",
+				"Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13");
 	    return webClient;
 	}
 

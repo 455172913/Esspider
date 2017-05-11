@@ -34,7 +34,7 @@ public class DBToSearch {
     @Resource
     TeleplayDOMapper teleplayDOMapper;
 
-    @Scheduled(cron = "1 30 14 * * ?")
+    @Scheduled(cron = "1 30 2 * * ?")
     public void execute() {
         String date = DateUtil.format(new Date(),"yyyy-MM-dd");
         List<TeleplayDO> teleplayDOList = teleplayDOMapper.selectByDate(date);

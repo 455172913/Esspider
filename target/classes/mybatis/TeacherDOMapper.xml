@@ -14,40 +14,40 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from teacher
+    from login
     where id = #{id,jdbcType=INTEGER}
   </select>
 
   <select id="selectTeacherByName" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from teacher
+    from login
     where teacherName = #{name,jdbcType=VARCHAR}
   </select>
   <select id="selectAllTeacher"  resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from teacher
+    from login
   </select>
   <select id="selectByUserPwd" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from teacher
+    from login
     where username = #{username,jdbcType=VARCHAR}
     and password = #{password,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from teacher
+    delete from login
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.domain.TeacherDO">
-    insert into teacher (id, teacherName, password, 
+    insert into login (id, teacherName, password, 
       username, root)
     values (#{id,jdbcType=INTEGER}, #{teachername,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{username,jdbcType=VARCHAR}, #{root,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="com.domain.TeacherDO">
-    insert into teacher
+    insert into login
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -84,7 +84,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.domain.TeacherDO">
-    update teacher
+    update login
     <set>
       <if test="teachername != null">
         teacherName = #{teachername,jdbcType=VARCHAR},
@@ -102,7 +102,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.domain.TeacherDO">
-    update teacher
+    update login
     set teacherName = #{teachername,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       username = #{username,jdbcType=VARCHAR},
