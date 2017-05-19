@@ -21,7 +21,7 @@
         <h1>爬虫影视</h1>
     </header>
     <div class="login-main">
-        <form action="/admin/login" class="layui-form" method="post">
+        <form action="/admin/register" class="layui-form" method="post">
             <div class="layui-form-item">
                 <label class="login-icon">
                     <i class="layui-icon"></i>
@@ -35,13 +35,18 @@
                 <input type="password" name="password" lay-verify="password" autocomplete="off" placeholder="这里输入密码" class="layui-input">
             </div>
             <div class="layui-form-item">
+                <label class="login-icon">
+                    <i class="layui-icon"></i>
+                </label>
+                <input type="repassword" name="repassword" lay-verify="repassword" autocomplete="off" placeholder="确认密码" class="layui-input">
+            </div>
+            <div class="layui-form-item">
                 <div class="pull-left login-remember">
-                    <a href="/admin/registerPage"><label>注册</label></a>
 
                 </div>
                 <div class="pull-right">
                     <button class="layui-btn layui-btn-primary" lay-submit="" lay-filter="login">
-                        <i class="layui-icon"></i> 登录
+                        <i class="layui-icon"></i> 注册
                     </button>
                 </div>
                 <div class="clear"></div>
@@ -74,10 +79,28 @@
                 if (value === '')
                     return '请输入密码';
             }
+            repassword: function (value) {
+                if (value === '')
+                    return '请输入确认密码';
+            }
         });
 
         var errorCount = 0;
-
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            $.ajax({
+                url:"/login/insert",
+                type:"get",
+                data:data.field,
+                success:function(da){
+                    layer.alert("添加成功");
+                    window.location.reload();
+                }
+            })
+            return false;
+        });
         form.on('submit(login)', function (data) {
             window.location.href = "..common/page/index.html";
             /*if (errorCount > 5) {

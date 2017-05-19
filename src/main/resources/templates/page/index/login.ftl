@@ -36,9 +36,8 @@
             </div>
             <div class="layui-form-item">
                 <div class="pull-left login-remember">
-                    <label>记住帐号？</label>
+                    <a href="/admin/registerPage"><label>注册</label></a>
 
-                    <input type="checkbox" name="rememberMe" value="true" lay-skin="switch" title="记住帐号"><div class="layui-unselect layui-form-switch"><i></i></div>
                 </div>
                 <div class="pull-right">
                     <button class="layui-btn layui-btn-primary" lay-submit="" lay-filter="login">

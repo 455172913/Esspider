@@ -48,9 +48,10 @@ public class AdminController {
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public String search(@RequestParam(value = "search_name", required = true) String search_name,
-                         @RequestParam(value = "type", required = true) Integer type, ModelMap modelMap) {
+                         @RequestParam(value = "type", required = true) Integer type, ModelMap modelMap,HttpServletResponse response) {
         Map resultMap = searchService.search(search_name,type);
         modelMap.put("result",resultMap);
+        response.setHeader("Referer",null);
         return "/page/index/list";
 
     }
@@ -106,6 +107,28 @@ public class AdminController {
             return "/page/index/index";
 
         }
+    }
+    @RequestMapping(value = "/registerPage", method = RequestMethod.GET)
+    public String registerPage() {
+        return "/page/index/teachermanage";
+
+    }
+    @RequestMapping(value = "/insert", method = RequestMethod.GET)
+    @ResponseBody
+    Object insert(@RequestParam(value = "username", required = true) String username,
+                  @RequestParam(value = "password", required = true) String password,
+                  @RequestParam(value = "name", required = true) String name) {
+        int result = 0;
+        try {
+            result = loginService.insertTeacher(username,password,name,0);
+            return ResponseUtils.getResponse(ImmutableMap.<String, Object>builder()
+                    .put("result",result)
+                    .build(), BizCodeEnum.SUCCESS.code, "success");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ResponseUtils.getResponseError(BizCodeEnum.SERVER_ERR.code,BizCodeEnum.getMsg(BizCodeEnum.SERVER_ERR.code));
+
     }
 
 }
